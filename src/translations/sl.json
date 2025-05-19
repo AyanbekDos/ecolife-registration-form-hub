@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Domača stran",
+    "about": "O nas",
+    "benefits": "Prednosti",
+    "register": "Registracija"
+  },
+  "hero": {
+    "title": "EKOLIVENJEEVROAZIJA",
+    "subtitle": "Nov prostor priložnosti za vaše podjetje. Prijavite se za dobra mesta – prihodnost se začne danes",
+    "description": "Edinstven digitalni prostor, ki združuje Evropo in Srednjo Azijo. Inovativna in zanesljiva mednarodna ekoplatforma za okolju prijazne izdelke, storitve in ekotehnologije.",
+    "registerButton": "Registracija",
+    "additionalInfo": "Preverjene ekostoritve, ekoizdelki in inovativne ekotehnologije v Evropi in Srednji Aziji na enem mestu",
+    "officialInfo": "Uradni projekt, pravno registriran na državni ravni",
+    "platformStatus": "&quot;Perton v gradnji&quot;",
+    "callToAction": "EkoLifeEuroAsia – Prostor novih priložnosti za vaše podjetje. Prijavite se za dobra mesta – prihodnost se začne danes"
+  },
+  "about": {
+    "title": "O EKOLIFEEUROASIA",
+    "mission": "Ozaveščanje o okolju in ustvarjanje čistega, trajnostnega in okolju prijaznega poslovnega okolja v Evropi in Srednji Aziji.",
+    "missionTitle": "Naše poslanstvo",
+    "description": "Preverjene ekostoritve, ekoizdelki, inovativne ekotehnologije v Evropi in Srednji Aziji na enem mestu. Uradni projekt, pravno registriran na državni ravni.",
+    "features": {
+      "international": {
+        "title": "Mednarodna platforma",
+        "description": "Združuje Evropo in Srednjo Azijo"
+      },
+      "certified": {
+        "title": "Certificirano",
+        "description": "Preverjeni ekološki izdelki in storitve"
+      },
+      "official": {
+        "title": "Uradno registrirano",
+        "description": "Pravno registrirano na državni ravni"
+      }
+    }
+  },
+  "benefits": {
+    "title": "PREDNOSTI",
+    "benefits": [
+      {
+        "title": "Več kot 40 podeželskih trgov",
+        "description": "Takoj vstopite! Registrirajte se zdaj in osvojite svetovni trg!"
+      },
+      {
+        "title": "50 % popust",
+        "description": "Čas je omejen! Izkoristite predregistracijo!"
+      },
+      {
+        "title": "&quot;100 globalnih ekoloških voditeljev&quot;",
+        "description": "Pridobi status! Število mest je omejeno!"
+      },
+      {
+        "title": "&quot;100 ekoloških blagovnih znamk&quot;",
+        "description": "Ostanite v vrsti! Bodite med najboljšimi, mesta so omejena!"
+      },
+      {
+        "title": "Najučinkovitejša mesta",
+        "description": "Lahko bi bil vaš na eko-platformi št. 1! Časovno omejena ponudba, prijavite se zdaj!"
+      }
+    ],
+    "whyRegisterTitle": "ZAKAJ SE REGISTRIRATI ZDAJ?",
+    "benefitsItems": [
+      {
+        "title": "Takoj vstopite na trge več kot 40 držav!",
+        "description": "Registrirajte se zdaj in osvojite svetovni trg!"
+      },
+      {
+        "title": "50 % popust – le za omejen čas!",
+        "description": "Izkoristite predregistracijo!"
+      },
+      {
+        "title": "100 globalnih ekoloških voditeljev",
+        "description": "Pridobi si naslov! Prostor je omejen!"
+      },
+      {
+        "title": "Bodite med 100 ekoznamkami!",
+        "description": "Bodite med najboljšimi, število mest je omejeno!"
+      },
+      {
+        "title": "Najbolj dobičkonosna mesta na ekoplatformi št. 1",
+        "description": "Lahko bi bilo tvoje! Omejeno število mest, prijavite se zdaj!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Obrazec za predregistracijo",
+    "subtitle": "Spoštovani partner/partnerka! Za predhodno registracijo na ekoplatformo EkoLifeEuroAsia izpolnite spodnje podatke.",
+    "fields": {
+      "country": "Država / Mesto",
+      "company": "Ime podjetja",
+      "industry": "Industrija / Smer",
+      "email": "E-poštni naslov",
+      "phone": "Telefon (neobvezno)",
+      "hasCertificate": "Ali imate okoljski certifikat?",
+      "yes": "Da",
+      "no": "Ne",
+      "description": "Kratek opis vašega podjetja (o vaših izdelkih ali storitvah)"
+    },
+    "warning": {
+      "title": "POZOR!",
+      "description": "Registracija na platformi je sestavljena iz dveh faz:",
+      "steps": [
+        "Za plačilo, rezervacijo sedeža in uveljavljanje popustov je potrebna predhodna registracija.",
+        "Napredna registracija – začne se po zagonu demo različice platforme."
+      ]
+    },
+    "formTitle": "1. Podatki o registrantu",
+    "afterSubmit": "Po predhodni registraciji vam bomo kmalu po elektronski pošti poslali predstavitev spletnega mesta.",
+    "submitButton": "Pošlji",
+    "successMessage": "Uspešno poslano!",
+    "errorMessage": "Napaka"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "email": "leads@ecolifeeuroasia.com",
+    "location": "Lokacija: Srednja Azija | Kazahstan | Mesto Karaganda",
+    "copyright": "© 2025 EkoLifeEuroAsia. Vse pravice pridržane.",
+    "companyDescription": "EcoLifeEuroAsia je registrirana mednarodna ekoplatforma",
+    "platformDevelopment": "(Nova različica platforme je v razvoju – spremljajte nas!)",
+    "securityTitle": "Varnost",
+    "securityDescription": "Vaši podatki so zaščiteni. Vse transakcije so varne."
+  }
+}

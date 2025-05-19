@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Faqja kryesore",
+    "about": "Rreth nesh",
+    "benefits": "Avantazhet",
+    "register": "Regjistrimi"
+  },
+  "hero": {
+    "title": "ECOLIFEEUROASIA",
+    "subtitle": "Një hapësirë e re mundësish për biznesin tuaj. Regjistrohuni për vende të mira – e ardhmja fillon sot",
+    "description": "Një hapësirë unike dixhitale që bashkon Evropën dhe Azinë Qendrore. Një eko-platformë ndërkombëtare inovative dhe e besueshme për produkte, shërbime dhe eko-teknologji miqësore me mjedisin.",
+    "registerButton": "Regjistrimi",
+    "additionalInfo": "Shërbime ekologjike, produkte ekologjike dhe teknologji inovative ekologjike të verifikuara në Evropë dhe Azinë Qendrore në një vend",
+    "officialInfo": "Projekt zyrtar, i regjistruar ligjërisht në nivel shtetëror",
+    "platformStatus": "&quot;Platforma në ndërtim e sipër&quot;",
+    "callToAction": "EkoLifeEuroAsia – Një hapësirë mundësish të reja për biznesin tuaj. Regjistrohuni për vende të mira — e ardhmja fillon sot"
+  },
+  "about": {
+    "title": "RRETH EKOLIFEEUROASIA",
+    "mission": "Për të rritur ndërgjegjësimin mjedisor dhe për të krijuar një mjedis biznesi të pastër, të qëndrueshëm dhe miqësor ndaj mjedisit në Evropë dhe Azinë Qendrore.",
+    "missionTitle": "Misioni ynë",
+    "description": "Shërbime ekologjike të verifikuara, produkte ekologjike, teknologji inovative ekologjike në Evropë dhe Azinë Qendrore në një vend. Projekt zyrtar, i regjistruar ligjërisht në nivel shtetëror.",
+    "features": {
+      "international": {
+        "title": "Platformë ndërkombëtare",
+        "description": "Bashkon Evropën dhe Azinë Qendrore"
+      },
+      "certified": {
+        "title": "I Certifikuar",
+        "description": "Produkte dhe shërbime ekologjike të verifikuara"
+      },
+      "official": {
+        "title": "Zyrtarisht i regjistruar",
+        "description": "I regjistruar ligjërisht në nivel shtetëror"
+      }
+    }
+  },
+  "benefits": {
+    "title": "PËRPARËSITË",
+    "benefits": [
+      {
+        "title": "40+ Tregje Vendore",
+        "description": "Hyr menjëherë! Regjistrohu tani dhe pushto tregun botëror!"
+      },
+      {
+        "title": "50% zbritje",
+        "description": "Koha është e kufizuar! Përfitoni nga regjistrimi paraprak!"
+      },
+      {
+        "title": "&quot;100 Ekologjikë Globalë&quot;",
+        "description": "Merrni statusin! Ka vende të kufizuara!"
+      },
+      {
+        "title": "&quot;100 marka ekologjike&quot;",
+        "description": "Qëndroni në radhë! Bëhu ndër më të mirët, vendet janë të kufizuara!"
+      },
+      {
+        "title": "Vendet më efektive",
+        "description": "Mund të jetë i juaji në eko-platformën #1! Ofertë e kufizuar në kohë, regjistrohuni tani!"
+      }
+    ],
+    "whyRegisterTitle": "PSE TË REGJISTROHENI TANI?",
+    "benefitsItems": [
+      {
+        "title": "Hyni menjëherë në tregjet e mbi 40 vendeve!",
+        "description": "Regjistrohu tani dhe pushto tregun botëror!"
+      },
+      {
+        "title": "50% zbritje - vetëm kohë e kufizuar!",
+        "description": "Përfitoni nga regjistrimi paraprak!"
+      },
+      {
+        "title": "100 Liderë Globalë të Eko-s",
+        "description": "Merr titullin! Hapësira është e kufizuar!"
+      },
+      {
+        "title": "Bëhu ndër 100 EcoBrands!",
+        "description": "Bëhu një nga më të mirët, vendet janë të kufizuara!"
+      },
+      {
+        "title": "Vendet më fitimprurëse në eko-platformën nr. 1",
+        "description": "Mund të jetë e jotja! Vend i kufizuar, regjistrohuni tani!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Formulari i para-regjistrimit",
+    "subtitle": "I dashur partner! Për t&#39;u regjistruar paraprakisht në eko-platformën EkoLifeEuroAsia, ju lutemi plotësoni informacionin më poshtë.",
+    "fields": {
+      "country": "Vendi / Qyteti",
+      "company": "Emri i kompanisë",
+      "industry": "Industria / Drejtimi",
+      "email": "Adresa e email-it",
+      "phone": "Telefon (opsional)",
+      "hasCertificate": "A keni një certifikatë mjedisore?",
+      "yes": "Po",
+      "no": "Jo",
+      "description": "Një përshkrim i shkurtër i kompanisë suaj (rreth produkteve ose shërbimeve tuaja)"
+    },
+    "warning": {
+      "title": "KUSHTO VËMENDJE!",
+      "description": "Regjistrimi në platformë përbëhet nga dy faza:",
+      "steps": [
+        "Regjistrimi paraprak është i nevojshëm për të bërë pagesën, për të rezervuar një vend dhe për të siguruar zbritje.",
+        "Regjistrim i avancuar – fillon pasi të lançohet versioni demo i platformës."
+      ]
+    },
+    "formTitle": "1. Informacion rreth regjistruesit",
+    "afterSubmit": "Pas pararegjistrimit, së shpejti do t&#39;ju dërgojmë një prezantim të faqes me email.",
+    "submitButton": "Dërgo",
+    "successMessage": "U dërgua me sukses!",
+    "errorMessage": "Gabim"
+  },
+  "footer": {
+    "contact": "Kontakti",
+    "email": "leads@ecolifeeuroasia.com",
+    "location": "Vendndodhja: Azia Qendrore | Kazakistani | Qyteti i Karagandës",
+    "copyright": "© 2025 EkoLifeEuroAsia. Të gjitha të drejtat e rezervuara.",
+    "companyDescription": "EcoLifeEuroAsia është një eko-platformë ndërkombëtare e regjistruar",
+    "platformDevelopment": "(Një version i ri i platformës është në zhvillim e sipër — qëndroni në kontakt!)",
+    "securityTitle": "Siguria",
+    "securityDescription": "Të dhënat tuaja janë të mbrojtura. Të gjitha transaksionet janë të sigurta."
+  }
+}

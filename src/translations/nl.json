@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Startpagina",
+    "about": "Over ons",
+    "benefits": "Voordelen",
+    "register": "Registratie"
+  },
+  "hero": {
+    "title": "ECOLIFEEUROASIA",
+    "subtitle": "Nieuwe kansen voor uw bedrijf. Schrijf je in voor goede plekken – de toekomst begint vandaag",
+    "description": "Een unieke digitale ruimte die Europa en Centraal-Azië verenigt. Een innovatief en betrouwbaar internationaal eco-platform voor milieuvriendelijke producten, diensten en ecotechnologieën.",
+    "registerButton": "Registratie",
+    "additionalInfo": "Geverifieerde eco-diensten, eco-producten en innovatieve eco-technologieën in Europa en Centraal-Azië op één plek",
+    "officialInfo": "Officieel project, wettelijk geregistreerd op staatsniveau",
+    "platformStatus": "&quot;Platform in aanbouw&quot;",
+    "callToAction": "EkoLifeEuroAsia – Een ruimte vol nieuwe kansen voor uw bedrijf. Registreer je voor goede plekken – de toekomst begint vandaag"
+  },
+  "about": {
+    "title": "OVER EKOLIFEEUROASIA",
+    "mission": "Om het milieubewustzijn te vergroten en een schoon, duurzaam en milieuvriendelijk ondernemersklimaat te creëren in Europa en Centraal-Azië.",
+    "missionTitle": "Onze missie",
+    "description": "Geverifieerde eco-diensten, eco-producten, innovatieve eco-technologieën in Europa en Centraal-Azië op één plek Officieel project, wettelijk geregistreerd op staatsniveau",
+    "features": {
+      "international": {
+        "title": "Internationaal platform",
+        "description": "Verenigt Europa en Centraal-Azië"
+      },
+      "certified": {
+        "title": "Gecertificeerd",
+        "description": "Geverifieerde ecoproducten en -diensten"
+      },
+      "official": {
+        "title": "Officieel geregistreerd",
+        "description": "Wettelijk geregistreerd op staatsniveau"
+      }
+    }
+  },
+  "benefits": {
+    "title": "VOORDELEN",
+    "benefits": [
+      {
+        "title": "40+ Landmarkten",
+        "description": "Kom meteen binnen! Registreer nu en verover de wereldmarkt!"
+      },
+      {
+        "title": "50% korting",
+        "description": "De tijd is beperkt! Maak gebruik van de mogelijkheid tot voorregistratie!"
+      },
+      {
+        "title": "&quot;100 wereldwijde eco-leiders&quot;",
+        "description": "Ontvang status! Het aantal plaatsen is beperkt!"
+      },
+      {
+        "title": "&quot;100 eco-merken&quot;",
+        "description": "Blijf in de rij! Wees één van de besten, want het aantal plaatsen is beperkt!"
+      },
+      {
+        "title": "De meest effectieve plaatsen",
+        "description": "Het kan van jou zijn op het #1 eco-platform! Beperkt tijdelijk aanbod, registreer nu!"
+      }
+    ],
+    "whyRegisterTitle": "WAAROM NU REGISTREREN?",
+    "benefitsItems": [
+      {
+        "title": "Betreed direct de markten van meer dan 40 landen!",
+        "description": "Registreer nu en verover de wereldmarkt!"
+      },
+      {
+        "title": "50% korting – slechts voor beperkte tijd!",
+        "description": "Maak gebruik van de mogelijkheid tot voorregistratie!"
+      },
+      {
+        "title": "100 wereldwijde eco-leiders",
+        "description": "Ontdek de titel! Beperkt aantal plaatsen!"
+      },
+      {
+        "title": "Sluit u aan bij de 100 EcoBrands!",
+        "description": "Wees één van de besten, want het aantal plaatsen is beperkt!"
+      },
+      {
+        "title": "De meest winstgevende plekken op eco-platform nr. 1",
+        "description": "Het kan van jou zijn! Beperkt aantal plaatsen, registreer nu!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Voorinschrijvingsformulier",
+    "subtitle": "Beste partner! Wilt u zich vooraf registreren voor het EkoLifeEuroAsia eco-platform? Vul dan onderstaande informatie in.",
+    "fields": {
+      "country": "Land / Stad",
+      "company": "Bedrijfsnaam",
+      "industry": "Industrie / Richting",
+      "email": "E-mailadres",
+      "phone": "Telefoon (optioneel)",
+      "hasCertificate": "Heeft u een milieucertificaat?",
+      "yes": "Ja",
+      "no": "Nee",
+      "description": "Een korte beschrijving van uw bedrijf (over uw producten of diensten)"
+    },
+    "warning": {
+      "title": "LET OP!",
+      "description": "Registratie op het platform bestaat uit twee stappen:",
+      "steps": [
+        "Om te betalen, een zitplaats te reserveren en korting te krijgen, is voorafgaande registratie vereist.",
+        "Geavanceerde registratie – start nadat de demoversie van het platform is gelanceerd."
+      ]
+    },
+    "formTitle": "1. Informatie over de registrant",
+    "afterSubmit": "Nadat u zich vooraf heeft geregistreerd, sturen wij u binnenkort een presentatie per e-mail.",
+    "submitButton": "Versturen",
+    "successMessage": "Succesvol verzonden!",
+    "errorMessage": "Fout"
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "leads@ecolifeeuroasia.com",
+    "location": "Locatie: Centraal-Azië | Kazachstan | Karaganda stad",
+    "copyright": "© 2025 EkoLifeEuroAsia. Alle rechten voorbehouden.",
+    "companyDescription": "EcoLifeEuroAsia is een geregistreerd internationaal eco-platform",
+    "platformDevelopment": "(Er is een nieuwe platformversie in ontwikkeling, blijf op de hoogte!)",
+    "securityTitle": "Beveiliging",
+    "securityDescription": "Uw gegevens zijn beschermd. Alle transacties zijn veilig."
+  }
+}

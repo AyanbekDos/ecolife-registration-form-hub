@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Sākumslapa",
+    "about": "Par mums",
+    "benefits": "Priekšrocības",
+    "register": "Reģistrācija"
+  },
+  "hero": {
+    "title": "EKOLOĢIJAEIROĀZIJA",
+    "subtitle": "Jauna iespēju telpa jūsu biznesam. Reģistrējieties labām vietām – nākotne sākas jau šodien",
+    "description": "Unikāla digitālā telpa, kas vieno Eiropu un Centrālāziju. Inovatīva un uzticama starptautiska ekoplatforma videi draudzīgiem produktiem, pakalpojumiem un ekotehnoloģijām.",
+    "registerButton": "Reģistrācija",
+    "additionalInfo": "Pārbaudīti ekopakalpojumi, ekoprodukti un inovatīvas ekotehnoloģijas Eiropā un Centrālāzijā vienuviet",
+    "officialInfo": "Oficiāls projekts, kas likumīgi reģistrēts valsts līmenī",
+    "platformStatus": "&quot;Platforma tiek būvēta&quot;",
+    "callToAction": "EkoLifeEuroAsia – Jaunu iespēju telpa jūsu biznesam. Reģistrējieties labām vietām — nākotne sākas jau šodien"
+  },
+  "about": {
+    "title": "PAR EKOLIFEEUROASIAT",
+    "mission": "Veicināt vides apziņu un radīt tīru, ilgtspējīgu un videi draudzīgu uzņēmējdarbības vidi Eiropā un Centrālāzijā.",
+    "missionTitle": "Mūsu misija",
+    "description": "Pārbaudīti ekopakalpojumi, ekoprodukti, inovatīvas ekotehnoloģijas Eiropā un Centrālāzijā vienuviet. Oficiāls projekts, kas juridiski reģistrēts valsts līmenī.",
+    "features": {
+      "international": {
+        "title": "Starptautiskā platforma",
+        "description": "Apvieno Eiropu un Centrālāziju"
+      },
+      "certified": {
+        "title": "Sertificēts",
+        "description": "Pārbaudīti ekoprodukti un pakalpojumi"
+      },
+      "official": {
+        "title": "Oficiāli reģistrēts",
+        "description": "Juridiski reģistrēts valsts līmenī"
+      }
+    }
+  },
+  "benefits": {
+    "title": "PRIEKŠROCĪBAS",
+    "benefits": [
+      {
+        "title": "Vairāk nekā 40 valstu tirgi",
+        "description": "Nāciet tūlīt iekšā! Reģistrējies tūlīt un iekaro pasaules tirgu!"
+      },
+      {
+        "title": "50% atlaide",
+        "description": "Laiks ir ierobežots! Izmantojiet iepriekšējas reģistrācijas priekšrocības!"
+      },
+      {
+        "title": "&quot;100 globālie eko līderi&quot;",
+        "description": "Iegūstiet statusu! Vietu skaits ir ierobežots!"
+      },
+      {
+        "title": "&quot;100 ekoloģiski zīmoli&quot;",
+        "description": "Stāviet rindā! Esi starp labākajiem, vietu skaits ierobežots!"
+      },
+      {
+        "title": "Visefektīvākās vietas",
+        "description": "Tas varētu būt tavējais #1 ekoplatformā! Ierobežota laika piedāvājums, reģistrējieties tūlīt!"
+      }
+    ],
+    "whyRegisterTitle": "KĀPĒC REĢISTRĒTIES TAGAD?",
+    "benefitsItems": [
+      {
+        "title": "Iekļūsti vairāk nekā 40 valstu tirgos acumirklī!",
+        "description": "Reģistrējies tūlīt un iekaro pasaules tirgu!"
+      },
+      {
+        "title": "50% atlaide – tikai ierobežotu laiku!",
+        "description": "Izmantojiet iepriekšējas reģistrācijas priekšrocības!"
+      },
+      {
+        "title": "100 globālie eko līderi",
+        "description": "Iegūstiet titulu! Vietu skaits ir ierobežots!"
+      },
+      {
+        "title": "Esi starp 100 ekozīmoliem!",
+        "description": "Esi viens no labākajiem, vietu skaits ir ierobežots!"
+      },
+      {
+        "title": "Visienesīgākās vietas ekoplatformā Nr. 1",
+        "description": "Tas varētu būt tavs! Ierobežota vieta, reģistrējieties tūlīt!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Iepriekšējas reģistrācijas veidlapa",
+    "subtitle": "Cienījamais partneri! Lai iepriekš reģistrētos EkoLifeEuroAsia ekoplatformā, lūdzu, aizpildiet tālāk norādīto informāciju.",
+    "fields": {
+      "country": "Valsts/pilsēta",
+      "company": "Uzņēmuma nosaukums",
+      "industry": "Nozare / Virziens",
+      "email": "E-pasta adrese",
+      "phone": "Tālrunis (pēc izvēles)",
+      "hasCertificate": "Vai jums ir vides sertifikāts?",
+      "yes": "Jā",
+      "no": "Nē",
+      "description": "Īss jūsu uzņēmuma apraksts (par jūsu produktiem vai pakalpojumiem)"
+    },
+    "warning": {
+      "title": "PIEVĒRSIET UZMANĪBU!",
+      "description": "Reģistrācija platformā sastāv no diviem posmiem:",
+      "steps": [
+        "Lai veiktu apmaksu, rezervētu vietu un saņemtu atlaides, nepieciešama iepriekšēja reģistrācija.",
+        "Iepriekšēja reģistrācija — sākas pēc platformas demonstrācijas versijas palaišanas."
+      ]
+    },
+    "formTitle": "1. Informācija par reģistrētāju",
+    "afterSubmit": "Pēc iepriekšējas reģistrācijas drīzumā nosūtīsim jums vietnes prezentāciju pa e-pastu.",
+    "submitButton": "Sūtīt",
+    "successMessage": "Veiksmīgi nosūtīts!",
+    "errorMessage": "Kļūda"
+  },
+  "footer": {
+    "contact": "Kontaktinformācija",
+    "email": "leads@ecolifeeuroasia.com",
+    "location": "Atrašanās vieta: Centrālāzija | Kazahstāna | Karagandas pilsēta",
+    "copyright": "© 2025 EkoLifeEuroAsia. Visas tiesības aizsargātas.",
+    "companyDescription": "EcoLifeEuroAsia ir reģistrēta starptautiska ekoplatforma",
+    "platformDevelopment": "(Jauna platformas versija ir izstrādes procesā — sekojiet līdzi jaunumiem!)",
+    "securityTitle": "Drošība",
+    "securityDescription": "Jūsu dati ir aizsargāti. Visi darījumi ir droši."
+  }
+}

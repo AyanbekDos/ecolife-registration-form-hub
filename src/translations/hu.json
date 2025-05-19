@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Kezdőlap",
+    "about": "Rólunk",
+    "benefits": "Előnyök",
+    "register": "Bejegyzés"
+  },
+  "hero": {
+    "title": "ÖKOLIFEEURÓZIA",
+    "subtitle": "Új lehetőségek a vállalkozása számára. Regisztrálj jó helyekre – a jövő ma kezdődik",
+    "description": "Egy egyedülálló digitális tér, amely egyesíti Európát és Közép-Ázsiát. Egy innovatív és megbízható nemzetközi ökoplatform környezetbarát termékek, szolgáltatások és ökotechnológiák számára.",
+    "registerButton": "Bejegyzés",
+    "additionalInfo": "Ellenőrzött ökoszolgáltatások, ökotermékek és innovatív ökotechnológiák Európában és Közép-Ázsiában egy helyen",
+    "officialInfo": "Hivatalos projekt, állami szinten jogilag bejegyezve",
+    "platformStatus": "&quot;Platform építés alatt&quot;",
+    "callToAction": "EkoLifeEuroAsia – Új lehetőségek tere vállalkozása számára. Regisztrálj jó helyekre – a jövő ma kezdődik"
+  },
+  "about": {
+    "title": "AZ EKOLIFEEUROASIÁRÓL",
+    "mission": "A környezettudatosság növelése, valamint tiszta, fenntartható és környezetbarát üzleti környezet megteremtése Európában és Közép-Ázsiában.",
+    "missionTitle": "Küldetésünk",
+    "description": "Ellenőrzött ökoszolgáltatások, ökotermékek, innovatív ökotechnológiák Európában és Közép-Ázsiában egy helyen. Hivatalos projekt, állami szinten jogilag bejegyezve.",
+    "features": {
+      "international": {
+        "title": "Nemzetközi platform",
+        "description": "Egyesíti Európát és Közép-Ázsiát"
+      },
+      "certified": {
+        "title": "Tanúsított",
+        "description": "Ellenőrzött ökotermékek és szolgáltatások"
+      },
+      "official": {
+        "title": "Hivatalosan regisztrált",
+        "description": "Állami szinten hivatalosan bejegyzett"
+      }
+    }
+  },
+  "benefits": {
+    "title": "ELŐNYÖK",
+    "benefits": [
+      {
+        "title": "40+ országpiac",
+        "description": "Gyere be azonnal! Regisztrálj most és hódítsd meg a világpiacot!"
+      },
+      {
+        "title": "50% kedvezmény",
+        "description": "Az idő korlátozott! Használd ki az előzetes regisztráció lehetőségét!"
+      },
+      {
+        "title": "&quot;100 globális ökovezető&quot;",
+        "description": "Szerezz státuszt! Korlátozott helyek vannak!"
+      },
+      {
+        "title": "&quot;100 öko márka&quot;",
+        "description": "Maradj sorban! Légy a legjobbak között, a helyek száma korlátozott!"
+      },
+      {
+        "title": "A leghatékonyabb helyek",
+        "description": "A tiéd lehet az első számú ökoplatformon! Korlátozott ideig érvényes ajánlat, regisztráljon most!"
+      }
+    ],
+    "whyRegisterTitle": "MIÉRT ÉRDEMES MOST REGISZTRÁLNI?",
+    "benefitsItems": [
+      {
+        "title": "Lépj be több mint 40 ország piacára azonnal!",
+        "description": "Regisztrálj most és hódítsd meg a világpiacot!"
+      },
+      {
+        "title": "50% kedvezmény – csak korlátozott ideig!",
+        "description": "Használd ki az előzetes regisztráció lehetőségét!"
+      },
+      {
+        "title": "100 globális ökovezető",
+        "description": "Szerezd meg a címet! A férőhely korlátozott!"
+      },
+      {
+        "title": "Légy a 100 ökomárka között!",
+        "description": "Légy te is a legjobbak között, a helyek száma korlátozott!"
+      },
+      {
+        "title": "A legjövedelmezőbb helyek az 1. számú ökoplatformon",
+        "description": "Lehet, hogy a tiéd! Korlátozott hely, regisztrálj most!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Előzetes regisztrációs űrlap",
+    "subtitle": "Kedves partnerünk! Az EkoLifeEuroAsia ökoplatformra való előzetes regisztrációhoz kérjük, töltse ki az alábbi adatokat.",
+    "fields": {
+      "country": "Ország / Város",
+      "company": "Cégnév",
+      "industry": "Iparág / Irány",
+      "email": "E-mail cím",
+      "phone": "Telefon (opcionális)",
+      "hasCertificate": "Van környezetvédelmi tanúsítványod?",
+      "yes": "Igen",
+      "no": "Nem",
+      "description": "Cége rövid leírása (termékeiről vagy szolgáltatásairól)"
+    },
+    "warning": {
+      "title": "FIGYEL!",
+      "description": "A platformon történő regisztráció két szakaszból áll:",
+      "steps": [
+        "Előzetes regisztráció szükséges a fizetéshez, a helyfoglaláshoz és a kedvezmények igénybevételéhez.",
+        "Speciális regisztráció – a platform demó verziójának elindítása után kezdődik."
+      ]
+    },
+    "formTitle": "1. A regisztrálóra vonatkozó információk",
+    "afterSubmit": "Az előzetes regisztrációt követően hamarosan e-mailben küldünk egy bemutatót a helyszínről.",
+    "submitButton": "Elküld",
+    "successMessage": "Sikeresen elküldve!",
+    "errorMessage": "Hiba"
+  },
+  "footer": {
+    "contact": "Érintkezés",
+    "email": "leads@ecolifeeuroasia.com",
+    "location": "Helyszín: Közép-Ázsia | Kazahsztán | Karagandi város",
+    "copyright": "© 2025 EkoLifeEuroAsia. Minden jog fenntartva.",
+    "companyDescription": "Az EcoLifeEuroAsia egy bejegyzett nemzetközi ökoplatform",
+    "platformDevelopment": "(Egy új platformverzió fejlesztés alatt áll – figyeljétek a hírt!)",
+    "securityTitle": "Biztonság",
+    "securityDescription": "Az adataid védve vannak. Minden tranzakció biztonságos."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Avaleht",
+    "about": "Meist",
+    "benefits": "Eelised",
+    "register": "Registreerimine"
+  },
+  "hero": {
+    "title": "ÖKOLOOGIAEUROAASIA",
+    "subtitle": "Uus võimaluste ruum teie ettevõtte jaoks. Registreeru headesse kohtadesse – tulevik algab täna",
+    "description": "Ainulaadne digitaalne ruum, mis ühendab Euroopat ja Kesk-Aasiat. Innovatiivne ja usaldusväärne rahvusvaheline ökoplatvorm keskkonnasõbralikele toodetele, teenustele ja ökotehnoloogiatele.",
+    "registerButton": "Registreerimine",
+    "additionalInfo": "Kontrollitud ökoteenused, ökotooted ja uuenduslikud ökotehnoloogiad Euroopas ja Kesk-Aasias ühes kohas",
+    "officialInfo": "Ametlik projekt, mis on seaduslikult registreeritud riigi tasandil",
+    "platformStatus": "&quot;Platvorm on ehitusjärgus&quot;",
+    "callToAction": "EkoLifeEuroAsia – Uute võimaluste ruum teie ettevõttele. Registreeru headesse kohtadesse – tulevik algab täna"
+  },
+  "about": {
+    "title": "EKOLIFEEUROASIAST",
+    "mission": "Keskkonnateadlikkuse tõstmine ning puhta, jätkusuutliku ja keskkonnasõbraliku ärikeskkonna loomine Euroopas ja Kesk-Aasias.",
+    "missionTitle": "Meie missioon",
+    "description": "Kontrollitud ökoteenused, ökotooted, uuenduslikud ökotehnoloogiad Euroopas ja Kesk-Aasias ühes kohas. Ametlik projekt, mis on riigi tasandil seaduslikult registreeritud.",
+    "features": {
+      "international": {
+        "title": "Rahvusvaheline platvorm",
+        "description": "Ühendab Euroopat ja Kesk-Aasiat"
+      },
+      "certified": {
+        "title": "Sertifitseeritud",
+        "description": "Kontrollitud ökotooted ja -teenused"
+      },
+      "official": {
+        "title": "Ametlikult registreeritud",
+        "description": "Seaduslikult registreeritud riigi tasandil"
+      }
+    }
+  },
+  "benefits": {
+    "title": "EELISED",
+    "benefits": [
+      {
+        "title": "40+ riigi turgu",
+        "description": "Tule kohe sisse! Registreeru kohe ja valluta maailmaturg!"
+      },
+      {
+        "title": "50% allahindlust",
+        "description": "Aeg on piiratud! Kasutage eelregistreerimise võimalust!"
+      },
+      {
+        "title": "&quot;100 globaalset ökoliidrit&quot;",
+        "description": "Saa staatus! Kohtade arv on piiratud!"
+      },
+      {
+        "title": "&quot;100 ökobrändi&quot;",
+        "description": "Püsige järjekorras! Liitu parimate seas, kohtade arv on piiratud!"
+      },
+      {
+        "title": "Kõige tõhusamad kohad",
+        "description": "See võib olla sinu oma ökoplatvormi nr 1-l! Ajuti piiratud pakkumine, registreeru kohe!"
+      }
+    ],
+    "whyRegisterTitle": "MIKS REGISTREERUDA KOHE?",
+    "benefitsItems": [
+      {
+        "title": "Sisenege koheselt enam kui 40 riigi turgudele!",
+        "description": "Registreeru kohe ja valluta maailmaturg!"
+      },
+      {
+        "title": "50% allahindlust – ainult piiratud aja jooksul!",
+        "description": "Kasutage eelregistreerimise võimalust!"
+      },
+      {
+        "title": "100 globaalset ökoliidrit",
+        "description": "Haarake tiitel! Kohta on piiratud arv!"
+      },
+      {
+        "title": "Liitu 100 ökobrändi hulka!",
+        "description": "Ole üks parimaid, kohtade arv on piiratud!"
+      },
+      {
+        "title": "Kõige tulusamad kohad ökoplatvormil nr 1",
+        "description": "See võib olla sinu oma! Kohta on piiratud, registreeru kohe!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Eelregistreerimisvorm",
+    "subtitle": "Hea partner! EkoLifeEuroAsia ökoplatvormi eelregistreerimiseks palun täitke allolev teave.",
+    "fields": {
+      "country": "Riik / Linn",
+      "company": "Ettevõtte nimi",
+      "industry": "Tööstusharu / Suund",
+      "email": "E-posti aadress",
+      "phone": "Telefon (valikuline)",
+      "hasCertificate": "Kas teil on keskkonnasertifikaat?",
+      "yes": "Jah",
+      "no": "Ei",
+      "description": "Teie ettevõtte lühikirjeldus (toodete või teenuste kohta)"
+    },
+    "warning": {
+      "title": "PÖÖRA TÄHELEPANU!",
+      "description": "Platvormil registreerimine koosneb kahest etapist:",
+      "steps": [
+        "Tasumiseks, koha broneerimiseks ja allahindluste saamiseks on vajalik eelregistreerimine.",
+        "Eelregistreerimine – algab pärast platvormi demoversiooni käivitamist."
+      ]
+    },
+    "formTitle": "1. Teave registreerija kohta",
+    "afterSubmit": "Pärast eelregistreerimist saadame teile peagi e-posti teel saidi tutvustuse.",
+    "submitButton": "Saada",
+    "successMessage": "Edukalt saadetud!",
+    "errorMessage": "Viga"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "email": "leads@ecolifeeuroasia.com",
+    "location": "Asukoht: Kesk-Aasia | Kasahstan | Karaganda linn",
+    "copyright": "© 2025 EkoLifeEuroAsia. Kõik õigused kaitstud.",
+    "companyDescription": "EcoLifeEuroAsia on registreeritud rahvusvaheline ökoplatvorm",
+    "platformDevelopment": "(Uus platvormiversioon on väljatöötamisel – püsige lainel!)",
+    "securityTitle": "Turvalisus",
+    "securityDescription": "Teie andmed on kaitstud. Kõik tehingud on turvalised."
+  }
+}

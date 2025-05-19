@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Pagrindinis puslapis",
+    "about": "Apie mus",
+    "benefits": "Privalumai",
+    "register": "Registracija"
+  },
+  "hero": {
+    "title": "EKOLOGIJŲ EUROAZIJA",
+    "subtitle": "Nauja erdvė jūsų verslui, atverianti naujas galimybes. Registruokitės į geras vietas – ateitis prasideda šiandien",
+    "description": "Unikali skaitmeninė erdvė, vienijanti Europą ir Vidurinę Aziją. Novatoriška ir patikima tarptautinė ekologinė platforma, skirta aplinkai nekenksmingiems produktams, paslaugoms ir ekologinėms technologijoms.",
+    "registerButton": "Registracija",
+    "additionalInfo": "Patikrintos ekologinės paslaugos, ekologiški produktai ir inovatyvios ekologinės technologijos Europoje ir Centrinėje Azijoje vienoje vietoje",
+    "officialInfo": "Oficialus projektas, teisiškai įregistruotas valstybės lygmeniu",
+    "platformStatus": "&quot;Platforma statoma&quot;",
+    "callToAction": "„EkoLifeEuroAsia“ – naujų galimybių erdvė jūsų verslui. Registruokitės į geras vietas – ateitis prasideda šiandien"
+  },
+  "about": {
+    "title": "APIE EKOLIFEEUROASIĄ",
+    "mission": "Didinti aplinkosauginį sąmoningumą ir kurti švarią, tvarią ir aplinkai nekenksmingą verslo aplinką Europoje ir Centrinėje Azijoje.",
+    "missionTitle": "Mūsų misija",
+    "description": "Patikrintos ekologinės paslaugos, ekologiški produktai, inovatyvios ekologinės technologijos Europoje ir Centrinėje Azijoje vienoje vietoje. Oficialus projektas, teisiškai įregistruotas valstybės lygmeniu.",
+    "features": {
+      "international": {
+        "title": "Tarptautinė platforma",
+        "description": "Sujungia Europą ir Vidurinę Aziją"
+      },
+      "certified": {
+        "title": "Sertifikuota",
+        "description": "Patikrinti ekologiški produktai ir paslaugos"
+      },
+      "official": {
+        "title": "Oficialiai registruotas",
+        "description": "Teisiškai įregistruota valstybės lygmeniu"
+      }
+    }
+  },
+  "benefits": {
+    "title": "PRIVALUMAI",
+    "benefits": [
+      {
+        "title": "40+ šalių rinkų",
+        "description": "Užeik tuojau pat! Registruokitės dabar ir užkariaukite pasaulio rinką!"
+      },
+      {
+        "title": "50% nuolaida",
+        "description": "Laikas ribotas! Pasinaudokite išankstinės registracijos galimybe!"
+      },
+      {
+        "title": "„100 pasaulinių ekologinių lyderių“",
+        "description": "Gaukite statusą! Vietų skaičius ribotas!"
+      },
+      {
+        "title": "„100 ekologiškų prekių ženklų“",
+        "description": "Laikykitės eilės! Būk tarp geriausiųjų, vietų skaičius ribotas!"
+      },
+      {
+        "title": "Efektyviausios vietos",
+        "description": "Tai gali būti jūsų #1 ekologinėje platformoje! Laikinas pasiūlymas, registruokitės dabar!"
+      }
+    ],
+    "whyRegisterTitle": "KODĖL VERTA REGISTRUOTIS DABAR?",
+    "benefitsItems": [
+      {
+        "title": "Akimirksniu įženkite į daugiau nei 40 šalių rinkas!",
+        "description": "Registruokitės dabar ir užkariaukite pasaulio rinką!"
+      },
+      {
+        "title": "50% nuolaida – tik ribotą laiką!",
+        "description": "Pasinaudokite išankstinės registracijos galimybe!"
+      },
+      {
+        "title": "100 pasaulinių ekologinių lyderių",
+        "description": "Gaukite pavadinimą! Vietų skaičius ribotas!"
+      },
+      {
+        "title": "Būk tarp 100 ekologiškų prekių ženklų!",
+        "description": "Būk vienas geriausių, vietų skaičius ribotas!"
+      },
+      {
+        "title": "Pelningiausios vietos ekologinėje platformoje Nr. 1",
+        "description": "Tai galėtų būti tavo! Vietų ribota, registruokitės dabar!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Išankstinės registracijos forma",
+    "subtitle": "Gerbiamas partneri! Norėdami iš anksto užsiregistruoti „EkoLifeEuroAsia“ ekologinėje platformoje, užpildykite toliau pateiktą informaciją.",
+    "fields": {
+      "country": "Šalis / Miestas",
+      "company": "Įmonės pavadinimas",
+      "industry": "Pramonė / Kryptis",
+      "email": "El. pašto adresas",
+      "phone": "Telefonas (neprivaloma)",
+      "hasCertificate": "Ar turite aplinkosaugos sertifikatą?",
+      "yes": "Taip",
+      "no": "Ne",
+      "description": "Trumpas jūsų įmonės aprašymas (apie jūsų produktus ar paslaugas)"
+    },
+    "warning": {
+      "title": "ATKREIPKITE DĖMESĮ!",
+      "description": "Registracija platformoje susideda iš dviejų etapų:",
+      "steps": [
+        "Norint užsisakyti vietą, apmokėti ir pasinaudoti nuolaidomis, būtina išankstinė registracija.",
+        "Išankstinė registracija – prasideda paleidus platformos demonstracinę versiją."
+      ]
+    },
+    "formTitle": "1. Informacija apie registruotoją",
+    "afterSubmit": "Po išankstinės registracijos netrukus el. paštu atsiųsime jums svetainės pristatymą.",
+    "submitButton": "Siųsti",
+    "successMessage": "Sėkmingai išsiųsta!",
+    "errorMessage": "Klaida"
+  },
+  "footer": {
+    "contact": "Kontaktas",
+    "email": "leads@ecolifeeuroasia.com",
+    "location": "Vieta: Centrinė Azija | Kazachstanas | Karagandos miestas",
+    "copyright": "© 2025 EkoLifeEuroAsia. Visos teisės saugomos.",
+    "companyDescription": "„EcoLifeEuroAsia“ yra registruota tarptautinė ekologinė platforma",
+    "platformDevelopment": "(Kuriama nauja platformos versija – sekite naujienas!)",
+    "securityTitle": "Saugumas",
+    "securityDescription": "Jūsų duomenys yra apsaugoti. Visos operacijos yra saugios."
+  }
+}

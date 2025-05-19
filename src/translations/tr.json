@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Ana sayfa",
+    "about": "Hakkımızda",
+    "benefits": "Avantajları",
+    "register": "Kayıt"
+  },
+  "hero": {
+    "title": "EKOLİFEAVRUASYA",
+    "subtitle": "İşletmeniz için yeni bir fırsat alanı. İyi yerlere kaydolun – gelecek bugün başlıyor",
+    "description": "Avrupa ve Orta Asya&#39;yı birleştiren eşsiz bir dijital alan. Çevre dostu ürünler, hizmetler ve eko-teknolojiler için yenilikçi ve güvenilir uluslararası bir eko-platform.",
+    "registerButton": "Kayıt",
+    "additionalInfo": "Avrupa ve Orta Asya&#39;da doğrulanmış eko-hizmetler, eko-ürünler ve yenilikçi eko-teknolojiler tek bir yerde",
+    "officialInfo": "Resmi proje, devlet düzeyinde yasal olarak kayıtlı",
+    "platformStatus": "&quot;Platform yapım aşamasında&quot;",
+    "callToAction": "EkoLifeEuroAsia – İşiniz için yeni fırsatların alanı. İyi yerlere kaydolun — gelecek bugün başlıyor"
+  },
+  "about": {
+    "title": "EKOLIFEEUROASIA HAKKINDA",
+    "mission": "Avrupa ve Orta Asya&#39;da çevre bilincini artırmak ve temiz, sürdürülebilir ve çevre dostu bir iş ortamı yaratmak.",
+    "missionTitle": "Misyonumuz",
+    "description": "Avrupa ve Orta Asya&#39;da doğrulanmış eko-hizmetler, eko-ürünler, yenilikçi eko-teknolojiler tek bir yerde Resmi proje, devlet düzeyinde yasal olarak kayıtlı",
+    "features": {
+      "international": {
+        "title": "Uluslararası platform",
+        "description": "Avrupa ve Orta Asya&#39;yı birleştiriyor"
+      },
+      "certified": {
+        "title": "Sertifikalı",
+        "description": "Doğrulanmış eko-ürünler ve hizmetler"
+      },
+      "official": {
+        "title": "Resmen kayıtlı",
+        "description": "Eyalet düzeyinde yasal olarak kayıtlı"
+      }
+    }
+  },
+  "benefits": {
+    "title": "AVANTAJLARI",
+    "benefits": [
+      {
+        "title": "40+ Ülke Pazarı",
+        "description": "Hemen gelin! Hemen kaydolun ve dünya pazarını fethedin!"
+      },
+      {
+        "title": "%50 indirim",
+        "description": "Zamanınız kısıtlı! Ön kayıt fırsatından yararlanın!"
+      },
+      {
+        "title": "&quot;100 Küresel Eko-Lider&quot;",
+        "description": "Durum alın! Sınırlı sayıda yerimiz var!"
+      },
+      {
+        "title": "&quot;100 eko marka&quot;",
+        "description": "Sırada kalın! En iyilerden olun, yerler sınırlı!"
+      },
+      {
+        "title": "En etkili yerler",
+        "description": "#1 eko-platformda sizin olabilir! Sınırlı süreli teklif, hemen kaydolun!"
+      }
+    ],
+    "whyRegisterTitle": "NEDEN ŞİMDİ KAYIT OLMALISINIZ?",
+    "benefitsItems": [
+      {
+        "title": "40&#39;tan fazla ülkenin pazarına anında girin!",
+        "description": "Hemen kaydolun ve dünya pazarını fethedin!"
+      },
+      {
+        "title": "%50 indirim – sadece sınırlı bir süre için!",
+        "description": "Ön kayıt fırsatından yararlanın!"
+      },
+      {
+        "title": "100 Küresel Eko Lideri",
+        "description": "Başlığı al! Yerimiz sınırlıdır!"
+      },
+      {
+        "title": "100 EkoMarka arasında yerinizi alın!",
+        "description": "En iyilerden biri olun, yerimiz sınırlı!"
+      },
+      {
+        "title": "Eko-platform No. 1&#39;deki en karlı yerler",
+        "description": "Sizin olabilir! Sınırlı kontenjan, hemen kayıt olun!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Ön kayıt formu",
+    "subtitle": "Değerli ortağım! EkoLifeEuroAsia eko-platformuna ön kayıt yaptırmak için lütfen aşağıdaki bilgileri doldurun.",
+    "fields": {
+      "country": "Ülke / Şehir",
+      "company": "Firma Adı",
+      "industry": "Sanayi / Yön",
+      "email": "E-posta adresi",
+      "phone": "Telefon (isteğe bağlı)",
+      "hasCertificate": "Çevre sertifikanız var mı?",
+      "yes": "Evet",
+      "no": "HAYIR",
+      "description": "Şirketinizin kısa bir açıklaması (ürünleriniz veya hizmetleriniz hakkında)"
+    },
+    "warning": {
+      "title": "DİKKAT ETMEK!",
+      "description": "Platforma kayıt iki aşamadan oluşmaktadır:",
+      "steps": [
+        "Ödeme yapmak, yer ayırtmak ve indirimlerden yararlanmak için ön kayıt yaptırmanız gerekmektedir.",
+        "Gelişmiş kayıt – platformun demo versiyonu başlatıldıktan sonra başlar."
+      ]
+    },
+    "formTitle": "1. Kayıt sahibine ilişkin bilgiler",
+    "afterSubmit": "Ön kayıt yaptırdıktan sonra en kısa sürede size e-posta yoluyla bir site sunumu göndereceğiz.",
+    "submitButton": "Göndermek",
+    "successMessage": "Başarıyla gönderildi!",
+    "errorMessage": "Hata"
+  },
+  "footer": {
+    "contact": "Temas etmek",
+    "email": "potansiyel müşteriler@ecolifeeuroasia.com",
+    "location": "Konum: Orta Asya | Kazakistan | Karaganda şehri",
+    "copyright": "© 2025 EkoLifeEuroAsia. Her hakkı saklıdır.",
+    "companyDescription": "EcoLifeEuroAsia kayıtlı uluslararası bir eko-platformdur",
+    "platformDevelopment": "(Yeni bir platform versiyonu geliştiriliyor — takipte kalın!)",
+    "securityTitle": "Güvenlik",
+    "securityDescription": "Verileriniz korunmaktadır. Tüm işlemleriniz güvenlidir."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "navbar": {
+    "home": "Home page",
+    "about": "About us",
+    "benefits": "Advantages",
+    "register": "Registration"
+  },
+  "hero": {
+    "title": "ECOLIFEEUROASIA",
+    "subtitle": "A new space of opportunities for your business. Register for good places - the future starts today",
+    "description": "A unique digital space connecting Europe and Central Asia. An innovative and reliable international eco-platform for environmentally friendly products, services, and eco-technologies.",
+    "registerButton": "Registration",
+    "additionalInfo": "Verified eco-services, eco-products, and innovative eco-technologies in Europe and Central Asia in one place",
+    "officialInfo": "Official project, legally registered at the state level",
+    "platformStatus": "Platform under construction",
+    "callToAction": "EkoLifeEuroAsia – A new space of opportunities for your business. Register for good places — the future starts today"
+  },
+  "about": {
+    "title": "ABOUT EKOLIFEEUROASIA",
+    "mission": "To raise environmental awareness and create a clean, sustainable and environmentally friendly business environment in Europe and Central Asia.",
+    "missionTitle": "Our mission",
+    "description": "Verified eco-services, eco-products, innovative eco-technologies in Europe and Central Asia in one place Official project, legally registered at the state level",
+    "features": {
+      "international": {
+        "title": "International platform",
+        "description": "Unites Europe and Central Asia"
+      },
+      "certified": {
+        "title": "Certified",
+        "description": "Verified eco-products and services"
+      },
+      "official": {
+        "title": "Officially registered",
+        "description": "Legally registered at the state level"
+      }
+    }
+  },
+  "benefits": {
+    "title": "ADVANTAGES",
+    "benefits": [
+      {
+        "title": "Markets of 40+ countries",
+        "description": "accessible immediately! Register now and conquer the global market!"
+      },
+      {
+        "title": "50% discount",
+        "description": "limited time offer! Take advantage of pre-registration benefits!"
+      },
+      {
+        "title": "\"100 global eco-leaders\"",
+        "description": "get this status while you can! Limited spots available!"
+      },
+      {
+        "title": "\"100 eco-brands\"",
+        "description": "be one of them! Be among the best, limited spots available!"
+      },
+      {
+        "title": "The most effective spots",
+        "description": "on the #1 eco-platform can be yours! Limited opportunity, register now!"
+      }
+    ],
+    "whyRegisterTitle": "WHY REGISTER NOW?",
+    "benefitsItems": [
+      {
+        "title": "Enter the markets of 40+ countries instantly!",
+        "description": "Register now and conquer the world market!"
+      },
+      {
+        "title": "50% off – limited time only!",
+        "description": "Take advantage of pre-registration!"
+      },
+      {
+        "title": "100 Global Eco Leaders",
+        "description": "Hurry up and claim your title! Places are limited!"
+      },
+      {
+        "title": "Be among the 100 EcoBrands!",
+        "description": "Be one of the best, space is limited!"
+      },
+      {
+        "title": "The most profitable places on eco-platform No. 1",
+        "description": "It could be yours! Space is limited, register now!"
+      }
+    ]
+  },
+  "registration": {
+    "title": "Pre-registration form",
+    "subtitle": "Dear partner! To pre-register for the EkoLifeEuroAsia eco-platform, please fill in the information below.",
+    "fields": {
+      "country": "Country / City",
+      "company": "Company name",
+      "industry": "Industry / Direction",
+      "email": "Email address",
+      "phone": "Phone (optional)",
+      "hasCertificate": "Do you have an environmental certificate?",
+      "yes": "Yes",
+      "no": "No",
+      "description": "A brief description of your company (about your products or services)"
+    },
+    "warning": {
+      "title": "PAY ATTENTION!",
+      "description": "Registration on the platform consists of two stages:",
+      "steps": [
+        "Pre-registration – for payment, spot reservation, and securing discounts.",
+        "Extended registration – will begin after the platform demo version launch."
+      ]
+    },
+    "formTitle": "1. Information about the registrant",
+    "afterSubmit": "After pre-registration, we will send you a site presentation via email shortly.",
+    "submitButton": "Send",
+    "successMessage": "Successfully sent!",
+    "errorMessage": "Error"
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "leads@ecolifeeuroasia.com",
+    "location": "Location: Central Asia | Kazakhstan | Karaganda city",
+    "copyright": "© 2025 EkoLifeEuroAsia. All rights reserved",
+    "companyDescription": "EcoLifeEuroAsia - registered international eco-platform",
+    "platformDevelopment": "Platform under development. Launch in 2025",
+    "securityTitle": "Security and Confidentiality",
+    "securityDescription": "All data is protected and processed in accordance with international security standards"
+  }
+}
