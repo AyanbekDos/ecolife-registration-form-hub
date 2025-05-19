@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Detection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .result {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тестирование определения языка</h1>
+    
+    <div class="result">
+        <h3>Информация о браузере:</h3>
+        <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+        <p><strong>Определенный язык:</strong> <span id="browserLang"></span></p>
+        <p><strong>Поддерживаемые языки:</strong> <span id="languages"></span></p>
+    </div>
+
+    <div class="result">
+        <h3>Тест переключения языка:</h3>
+        <p>Измените язык в настройках браузера и обновите страницу</p>
+        <div id="testResult">
+            <p>Ожидание теста...</p>
+        </div>
+    </div>
+
+    <div class="result">
+        <h3>Подсказка для тестирования:</h3>
+        <p>1. Откройте настройки браузера</p>
+        <p>2. Найдите раздел "Язык" или "Language"</p>
+        <p>3. Добавьте нужный язык и переместите его на первое место</p>
+        <p>4. Перезагрузите страницу</p>
+    </div>
+
+    <script>
+        // Отображаем информацию о браузере
+        document.getElementById('userAgent').textContent = navigator.userAgent;
+        document.getElementById('browserLang').textContent = navigator.language || 'Не определен';
+        document.getElementById('languages').textContent = navigator.languages ? 
+            navigator.languages.join(', ') : 'Не поддерживается';
+
+        // Тестируем определение языка
+        function testLanguageDetection() {
+            const testLangs = ['ru', 'kk', 'en', 'de', 'fr'];
+            const detectedLang = (navigator.language || '').split('-')[0];
+            const isSupported = testLangs.includes(detectedLang);
+            
+            const resultDiv = document.getElementById('testResult');
+            
+            if (isSupported) {
+                resultDiv.innerHTML = `
+                    <p class="success">✅ Успешно определен язык: <strong>${detectedLang}</strong></p>
+                    <p>Этот язык поддерживается приложением.</p>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <p class="error">⚠️ Определен язык: <strong>${detectedLang || 'Неизвестный'}</strong></p>
+                    <p>Этот язык не поддерживается. Будет использован язык по умолчанию (kk).</p>
+                `;
+            }
+        }
+
+        // Запускаем тест при загрузке
+        window.onload = testLanguageDetection;
+    </script>
+</body>
+</html>

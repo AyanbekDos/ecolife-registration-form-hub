@@ -36,37 +36,21 @@ const navTexts = {
   }
 } as const;
 
-type NavLanguage = keyof typeof navTexts;
+type Language = keyof typeof navTexts;
 
 const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
   const isMobile = useIsMobile();
   const [currentLanguage, setCurrentLanguage] = useLanguage();
   
-  // Получаем тексты для текущего языка или используем fallback
-  const getNavText = () => {
-    // Проверяем, есть ли текущий язык в navTexts
-    if (currentLanguage in navTexts) {
-      return navTexts[currentLanguage as NavLanguage];
-    }
-    // Фолбэк на английский
-    if ('en' in navTexts) {
-      return navTexts.en;
-    }
-    // Если даже английского нет, используем первый доступный язык
-    return navTexts[Object.keys(navTexts)[0] as NavLanguage];
-  };
-  
-  const currentNavText = getNavText();
-  
   // Обновляем элементы навигации при изменении языка
   const navItems = [
-    { name: currentNavText.home, section: 'hero' },
-    { name: currentNavText.about, section: 'about' },
-    { name: currentNavText.benefits, section: 'benefits' },
-    { name: currentNavText.register, section: 'registration' }
+    { name: navTexts[currentLanguage].home, section: 'hero' },
+    { name: navTexts[currentLanguage].about, section: 'about' },
+    { name: navTexts[currentLanguage].benefits, section: 'benefits' },
+    { name: navTexts[currentLanguage].register, section: 'registration' }
   ];
 
-  const handleLanguageChange = (lang: string) => {
+  const handleLanguageChange = (lang: Language) => {
     setCurrentLanguage(lang);
   };
 
@@ -85,68 +69,33 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
     </>
   );
 
-  const LanguageDropdown = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
-    
-    // Обработчик клика вне меню
-    React.useEffect(() => {
-      const handleClickOutside = () => {
-        setIsOpen(false);
-      };
-      
-      if (isOpen) {
-        document.addEventListener('click', handleClickOutside);
-      }
-      
-      return () => {
-        document.removeEventListener('click', handleClickOutside);
-      };
-    }, [isOpen]);
-    
-    // Обработчик клика по кнопке
-    const handleButtonClick = (e: React.MouseEvent) => {
-      e.stopPropagation(); // Предотвращаем закрытие меню при клике на кнопку
-      setIsOpen(!isOpen);
-    };
-    
-    // Обработчик выбора языка
-    const handleLangSelect = (lang: string) => (e: React.MouseEvent) => {
-      e.stopPropagation();
-      handleLanguageChange(lang);
-      setIsOpen(false);
-    };
-    
-    return (
-      <div className="relative">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-white hover:bg-white/10"
-          aria-label="Change language"
-          onClick={handleButtonClick}
-        >
-          <Globe className="h-5 w-5" />
-        </Button>
-        {isOpen && (
-          <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-50">
-            {languages.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={handleLangSelect(lang.code)}
-                className={`w-full text-left px-4 py-2 text-sm ${
-                  currentLanguage === lang.code 
-                    ? 'bg-gray-100 text-gray-900' 
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                {lang.name}
-              </button>
-            ))}
-          </div>
-        )}
+  const LanguageDropdown = () => (
+    <div className="relative group">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="text-white hover:bg-white/10"
+        aria-label="Change language"
+      >
+        <Globe className="h-5 w-5" />
+      </Button>
+      <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 hidden group-hover:block z-50">
+        {languages.map((lang) => (
+          <button
+            key={lang.code}
+            onClick={() => handleLanguageChange(lang.code)}
+            className={`w-full text-left px-4 py-2 text-sm ${
+              currentLanguage === lang.code 
+                ? 'bg-gray-100 text-gray-900' 
+                : 'text-gray-700 hover:bg-gray-50'
+            }`}
+          >
+            {lang.name}
+          </button>
+        ))}
       </div>
-    );
-  };
+    </div>
+  );
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#021F18] shadow-md">

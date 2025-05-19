@@ -1,20 +1,46 @@
 import { Translations } from './translations/types';
 
 // Функция для определения языка пользователя
-function detectUserLanguage(): string {
-  // Определение языка браузера
-  const browserLang = typeof navigator !== 'undefined' 
-    ? navigator.language.split('-')[0] 
-    : 'kk'; // Казахский по умолчанию
+// Список поддерживаемых языков формируется динамически при первом импорте модуля
+let supportedLangs: string[] = [];
+
+// Экспортируем функцию для использования в других модулях
+export function getSupportedLanguages(): string[] {
+  if (supportedLangs.length > 0) return supportedLangs;
   
-  // Проверка, поддерживается ли язык
-  const supportedLangs = [
+  // Жестко задаем список поддерживаемых языков
+  // В Vite нет прямого аналога require.context без дополнительных плагинов
+  supportedLangs = [
     'kk', 'en', 'ru', 'de', 'fr', 'tr', 'pl', 'it', 'es', 'pt', 'nl',
     'bg', 'ro', 'hu', 'el', 'cs', 'sk', 'sl', 'hr', 'sr', 'bs',
     'mk', 'sq', 'lv', 'lt', 'et'
   ];
   
-  return supportedLangs.includes(browserLang) ? browserLang : 'kk';
+  return supportedLangs;
+}
+
+function detectUserLanguage(): string {
+  const langs = getSupportedLanguages();
+
+  if (typeof navigator === 'undefined') {
+    return 'kk';
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLang = urlParams.get('lang');
+  if (urlLang && langs.includes(urlLang)) {
+    return urlLang;
+  }
+
+  const browserLangs = navigator.languages || [navigator.language];
+  for (const lang of browserLangs) {
+    const langCode = lang.split('-')[0].toLowerCase();
+    if (langs.includes(langCode)) {
+      return langCode;
+    }
+  }
+
+  return 'kk';
 }
 
 // Кэш для загруженных переводов
@@ -22,26 +48,25 @@ const translationsCache: Record<string, Translations> = {};
 
 // Асинхронная функция для загрузки перевода
 export async function loadTranslation(lang: string = detectUserLanguage()): Promise<Translations> {
-  // Если перевод уже в кэше, возвращаем его
+  const langs = getSupportedLanguages();
   if (translationsCache[lang]) {
     return translationsCache[lang];
   }
-  
   try {
-    // Динамический импорт файла перевода
     const translation = await import(`./translations/${lang}.json`);
     translationsCache[lang] = translation as Translations;
     return translation as Translations;
   } catch (error) {
     console.error(`Ошибка загрузки перевода для языка ${lang}:`, error);
-    
-    // Если перевод не найден, пробуем загрузить казахский как запасной вариант
-    if (lang !== 'kk') {
-      console.warn(`Загрузка запасного перевода (kk)...`);
+    // Fallback: сначала en, если нет en — kk
+    if (lang !== 'en' && langs.includes('en')) {
+      console.warn('Пробуем fallback на EN...');
+      return loadTranslation('en');
+    }
+    if (lang !== 'kk' && langs.includes('kk')) {
+      console.warn('Пробуем fallback на KK...');
       return loadTranslation('kk');
     }
-    
-    // Если даже казахский не загружается, возвращаем пустой объект
     throw new Error(`Не удалось загрузить перевод для языка ${lang}`);
   }
 }

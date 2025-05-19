@@ -1,36 +1,35 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import RegistrationForm from '@/components/RegistrationForm';
 import Footer from '@/components/Footer';
-import { translations } from '@/translations';
+import { translations, getTranslation } from '@/translations';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Index = () => {
-  const [language, setLanguage] = useState('kk');
-  const [currentTranslations, setCurrentTranslations] = useState(translations.kk);
+  const { lang } = useParams<{ lang: string }>();
+  const [currentLanguage, setCurrentLanguage] = useLanguage();
+  const [currentTranslations, setCurrentTranslations] = useState(
+    // Используем функцию getTranslation для получения переводов
+    lang ? getTranslation(lang) : getTranslation(currentLanguage)
+  );
+  
   const heroRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
   const benefitsRef = useRef<HTMLElement>(null);
   const registrationRef = useRef<HTMLElement>(null);
 
+  // Обновляем переводы при изменении языка в URL
   useEffect(() => {
-    // Auto-detect user's language or region based on browser info
-    try {
-      const userLang = navigator.language.split('-')[0];
-      if (userLang === 'ru' || userLang === 'kk' || userLang === 'en') {
-        setLanguage(userLang);
-      }
-    } catch (error) {
-      console.error("Ошибка определения языка:", error);
+    if (lang) {
+      // Используем функцию getTranslation, которая обрабатывает все языки
+      setCurrentTranslations(getTranslation(lang));
     }
-  }, []);
-
-  useEffect(() => {
-    setCurrentTranslations(translations[language] || translations.kk);
-  }, [language]);
+  }, [lang]);
 
   const scrollToSection = (section: string) => {
     const sectionRefs: Record<string, React.RefObject<HTMLElement>> = {
@@ -48,10 +47,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar 
-        onScrollToSection={scrollToSection} 
-        onLanguageChange={setLanguage} 
-      />
+      <Navbar onScrollToSection={scrollToSection} />
 
       <main>
         <section ref={heroRef}>
