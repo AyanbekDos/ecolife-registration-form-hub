@@ -5,12 +5,6 @@ interface AppConfig {
   // Email для получения заявок
   emailTo: string;
   
-  // Ключи reCAPTCHA
-  recaptcha: {
-    siteKey: string;
-    secretKey: string;
-  };
-  
   // Настройки EmailJS
   emailjs: {
     serviceId: string;
@@ -31,12 +25,6 @@ interface AppConfig {
 const config: AppConfig = {
   // Email для получения заявок
   emailTo: import.meta.env.VITE_EMAIL_TO || 'leads@ecolifeeuroasia.com',
-  
-  // Ключи reCAPTCHA (для тестирования используются тестовые ключи Google)
-  recaptcha: {
-    siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
-    secretKey: import.meta.env.VITE_RECAPTCHA_SECRET_KEY
-  },
   
   // Настройки EmailJS
   emailjs: {

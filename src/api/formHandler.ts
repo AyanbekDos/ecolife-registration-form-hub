@@ -1,5 +1,3 @@
-import axios from 'axios';
-import config from '../config';
 import emailjs from '@emailjs/browser';
 
 interface FormData {
@@ -10,65 +8,28 @@ interface FormData {
   phone: string;
   hasCertificate: boolean;
   description: string;
-  recaptchaToken?: string;
-}
-
-// Проверка reCAPTCHA токена
-async function verifyRecaptcha(token: string): Promise<boolean> {
-  // Всегда выполняем проверку reCAPTCHA на бэкенде
-  try {
-    // Для продакшн-среды нужно использовать серверную проверку
-    // Но в браузере мы не можем напрямую выполнить запрос к API из-за CORS
-    // Поэтому для продакшна нужно создать прокси-сервер или использовать серверные функции
-    
-    // В продакшн-среде мы можем проверить только наличие токена
-    if (!token) {
-      console.error('Отсутствует токен reCAPTCHA');
-      return false;
-    }
-    
-    // Для полной проверки в продакшне нужно сделать запрос к серверу
-    // В данном случае мы просто проверяем наличие токена и считаем это успешной проверкой
-    console.log('Токен reCAPTCHA получен, считаем проверку успешной');
-    return true;
-    
-    /* Код для серверной проверки (должен выполняться на сервере, а не в браузере)
-    const recaptchaSecretKey = config.recaptcha.secretKey;
-    const response = await axios.post(
-      `https://www.google.com/recaptcha/api/siteverify`,
-      null,
-      {
-        params: {
-          secret: recaptchaSecretKey,
-          response: token
-        }
-      }
-    );
-    
-    return response.data.success;
-    */
-  } catch (error) {
-    console.error('reCAPTCHA verification error:', error);
-    return false;
-  }
 }
 
 // Проверка на спам
 function isSpam(formData: FormData): boolean {
-  // Проверка на наличие ссылок в описании (часто используется спамерами)
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  if (formData.description && urlRegex.test(formData.description)) {
+  // Проверяем, что все обязательные поля заполнены
+  if (!formData.country || !formData.company || !formData.industry || !formData.email) {
+    console.warn('Не все обязательные поля заполнены');
     return true;
   }
   
-  // Проверка на повторяющиеся символы (часто используется спамерами)
-  const repeatingCharsRegex = /(.)\1{10,}/;
-  if (
-    repeatingCharsRegex.test(formData.country) ||
-    repeatingCharsRegex.test(formData.company) ||
-    repeatingCharsRegex.test(formData.industry) ||
-    repeatingCharsRegex.test(formData.description || '')
-  ) {
+  // Проверяем email на валидность
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    console.warn('Неверный формат email');
+    return true;
+  }
+  
+  // Проверяем на спам-слова в описании
+  const spamWords = ['http', 'www', '.ru', '.com', 'click', 'free', 'win', 'prize'];
+  const description = formData.description?.toLowerCase() || '';
+  if (spamWords.some(word => description.includes(word))) {
+    console.warn('Обнаружены спам-слова в описании');
     return true;
   }
   
@@ -80,96 +41,81 @@ async function sendFormDataToEmail(formData: FormData): Promise<boolean> {
   try {
     // Логируем данные для отладки
     console.log('Отправка данных формы на email:', {
-      to: config.emailTo,
+      to: 'leads@ecolifeeuroasia.com',
       subject: 'Новая регистрация на Ecolife',
       formData
     });
     
-    // Получаем настройки EmailJS из конфигурации
-    const { serviceId, templateId, publicKey } = config.emailjs;
-    
-    // Проверяем, что все необходимые ключи указаны
-    if (!serviceId || !templateId || !publicKey) {
-      console.warn('Не указаны настройки EmailJS. Письмо не будет отправлено.');
-      // В режиме разработки возвращаем успех для тестирования
-      return true;
-    }
-    
-    // Создаем объект с данными для отправки
     const templateParams = {
-      to_email: config.emailTo,
-      from_name: formData.company,
+      to_email: 'leads@ecolifeeuroasia.com',
       from_email: formData.email,
-      subject: 'Новая регистрация на Ecolife',
-      country: formData.country,
-      company: formData.company,
-      industry: formData.industry,
-      phone: formData.phone || 'Не указан',
-      has_certificate: formData.hasCertificate ? 'Да' : 'Нет',
-      description: formData.description || 'Не указано'
+      from_name: formData.company,
+      message: `
+        Страна: ${formData.country}
+        Компания: ${formData.company}
+        Отрасль: ${formData.industry}
+        Email: ${formData.email}
+        Телефон: ${formData.phone}
+        Есть сертификат: ${formData.hasCertificate ? 'Да' : 'Нет'}
+        Описание: ${formData.description}
+      `
     };
-    
-    // Отправляем письмо с помощью EmailJS
-    try {
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-      
-      console.log('Письмо успешно отправлено!', response);
-      return true;
-    } catch (emailError) {
-      console.error('Ошибка при отправке письма:', emailError);
+
+    // Проверяем наличие обязательных переменных окружения
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('Не настроены переменные окружения для EmailJS');
+      console.log('VITE_EMAILJS_SERVICE_ID:', serviceId ? 'установлен' : 'отсутствует');
+      console.log('VITE_EMAILJS_TEMPLATE_ID:', templateId ? 'установлен' : 'отсутствует');
+      console.log('VITE_EMAILJS_PUBLIC_KEY:', publicKey ? 'установлен' : 'отсутствует');
       return false;
     }
+
+    const result = await emailjs.send(
+      serviceId,
+      templateId,
+      templateParams,
+      publicKey
+    );
+
+    console.log('Письмо успешно отправлено:', result);
+    return true;
   } catch (error) {
-    console.error('Ошибка при обработке формы:', error);
+    console.error('Ошибка при отправке письма:', {
+      message: error instanceof Error ? error.message : 'Неизвестная ошибка',
+      details: error
+    });
     return false;
   }
 }
 
 // Основная функция обработки формы
-export async function handleFormSubmission(formData: FormData): Promise<{ success: boolean; message: string }> {
+export const handleFormSubmission = async (formData: FormData) => {
   try {
-    // Проверка reCAPTCHA, если токен предоставлен
-    if (formData.recaptchaToken) {
-      const isValidRecaptcha = await verifyRecaptcha(formData.recaptchaToken);
-      if (!isValidRecaptcha) {
-        return { 
-          success: false, 
-          message: 'reCAPTCHA verification failed. Please try again.' 
-        };
-      }
-    }
-    
     // Проверка на спам
     if (isSpam(formData)) {
       return { 
         success: false, 
-        message: 'Your submission was flagged as potential spam. Please review your information.' 
+        message: 'Ваша заявка была помечена как спам. Пожалуйста, свяжитесь с нами другим способом.' 
       };
     }
     
-    // Отправка данных на email
+    // Отправка письма с данными формы
     const emailSent = await sendFormDataToEmail(formData);
+    
     if (!emailSent) {
-      return { 
-        success: false, 
-        message: 'Failed to send your registration. Please try again later.' 
-      };
+      return { success: false, message: 'Ошибка при отправке письма' };
     }
     
-    return { 
-      success: true, 
-      message: 'Your registration has been submitted successfully!' 
-    };
+    return { success: true, message: 'Форма успешно отправлена' };
   } catch (error) {
     console.error('Form submission error:', error);
     return { 
       success: false, 
-      message: 'An error occurred while processing your registration. Please try again.' 
+      message: 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.' 
     };
   }
 }
