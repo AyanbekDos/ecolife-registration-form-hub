@@ -34,8 +34,8 @@ const config: AppConfig = {
   
   // Ключи reCAPTCHA (для тестирования используются тестовые ключи Google)
   recaptcha: {
-    siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI', // Тестовый ключ Google
-    secretKey: import.meta.env.VITE_RECAPTCHA_SECRET_KEY || '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe' // Тестовый ключ Google
+    siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY,
+    secretKey: import.meta.env.VITE_RECAPTCHA_SECRET_KEY
   },
   
   // Настройки EmailJS

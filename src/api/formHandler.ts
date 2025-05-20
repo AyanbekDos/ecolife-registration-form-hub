@@ -15,17 +15,7 @@ interface FormData {
 
 // Проверка reCAPTCHA токена
 async function verifyRecaptcha(token: string): Promise<boolean> {
-  // Проверяем, используются ли тестовые ключи Google
-  const isTestKey = config.recaptcha.siteKey === '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' || 
-                   config.recaptcha.secretKey === '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
-  
-  // В локальной среде с тестовыми ключами пропускаем проверку
-  if (isTestKey && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
-    console.log('Используются тестовые ключи reCAPTCHA в локальной среде, пропускаем проверку');
-    return true;
-  }
-  
-  // Для продакшн-среды или продакшн-ключей выполняем реальную проверку
+  // Всегда выполняем проверку reCAPTCHA на бэкенде
   try {
     // Для продакшн-среды нужно использовать серверную проверку
     // Но в браузере мы не можем напрямую выполнить запрос к API из-за CORS

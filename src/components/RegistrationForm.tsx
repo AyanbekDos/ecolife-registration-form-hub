@@ -1,13 +1,18 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/components/ui/use-toast';
 import { Info, AlertTriangle } from 'lucide-react';
-import ReCAPTCHA from 'react-google-recaptcha';
 import { handleFormSubmission } from '@/api/formHandler';
 import config from '@/config';
+
+declare global {
+  interface Window {
+    grecaptcha: any;
+  }
+}
 
 interface RegistrationFormProps {
   translations: {
@@ -49,8 +54,43 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
     description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
+
+  // Загружаем reCAPTCHA v3
+  useEffect(() => {
+    const loadRecaptcha = () => {
+      const script = document.createElement('script');
+      script.src = `https://www.google.com/recaptcha/api.js?render=${config.recaptcha.siteKey}`;
+      script.async = true;
+      script.defer = true;
+      script.onload = () => {
+        setIsRecaptchaLoaded(true);
+      };
+      document.head.appendChild(script);
+    };
+
+    if (!window.grecaptcha) {
+      loadRecaptcha();
+    } else {
+      setIsRecaptchaLoaded(true);
+    }
+  }, []);
+
+  // Функция для выполнения reCAPTCHA v3
+  const executeRecaptcha = async (): Promise<string | null> => {
+    if (!window.grecaptcha) {
+      console.error('reCAPTCHA not loaded');
+      return null;
+    }
+
+    try {
+      const token = await window.grecaptcha.execute(config.recaptcha.siteKey, { action: 'submit' });
+      return token;
+    } catch (error) {
+      console.error('reCAPTCHA execution error:', error);
+      return null;
+    }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -61,9 +101,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
     setFormData(prev => ({ ...prev, hasCertificate: checked }));
   };
 
-  const handleRecaptchaChange = (token: string | null) => {
-    setRecaptchaToken(token);
-  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -82,41 +120,49 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: translations.errorMessage,
-        description: "Please enter a valid email address.",
-        variant: "destructive"
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    // reCAPTCHA validation
-    if (!recaptchaToken) {
-      toast({
-        title: translations.errorMessage,
-        description: "Please complete the reCAPTCHA verification.",
-        variant: "destructive"
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      // Отправка данных формы с использованием API
+      // Выполняем reCAPTCHA v3
+      const recaptchaToken = await executeRecaptcha();
+      
+      if (!recaptchaToken) {
+        throw new Error('Не удалось выполнить проверку reCAPTCHA');
+      }
+
+      // Form validation
+      if (!formData.country || !formData.company || !formData.industry || !formData.email) {
+        toast({
+          title: translations.errorMessage,
+          description: "Please fill in all required fields.",
+          variant: "destructive"
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        toast({
+          title: translations.errorMessage,
+          description: "Please enter a valid email address.",
+          variant: "destructive"
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
       const result = await handleFormSubmission({
         ...formData,
         recaptchaToken
       });
-      
+
       if (result.success) {
         toast({
-          title: translations.successMessage,
-          description: result.message,
+          title: "Успех!",
+          description: translations.successMessage,
         });
         
-        // Reset form after successful submission
+        // Сбрасываем форму
         setFormData({
           country: '',
           company: '',
@@ -126,24 +172,15 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
           hasCertificate: false,
           description: ''
         });
-        
-        // Сбросить reCAPTCHA
-        if (recaptchaRef.current) {
-          recaptchaRef.current.reset();
-        }
-        setRecaptchaToken(null);
       } else {
-        toast({
-          title: translations.errorMessage,
-          description: result.message,
-          variant: "destructive"
-        });
+        throw new Error(result.message || 'Ошибка при отправке формы');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       toast({
-        title: translations.errorMessage,
-        description: "An error occurred while submitting the form. Please try again.",
-        variant: "destructive"
+        variant: "destructive",
+        title: "Ошибка",
+        description: error instanceof Error ? error.message : translations.errorMessage,
       });
     } finally {
       setIsSubmitting(false);
@@ -299,19 +336,22 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
                   />
                 </div>
                 
-                <div className="flex justify-center my-4">
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    sitekey={config.recaptcha.siteKey}
-                    onChange={handleRecaptchaChange}
-                  />
-                </div>
-                
-                <div className="flex justify-center pt-4">
+                <div className="flex flex-col items-center pt-4 space-y-4">
+                  <div className="w-full flex flex-col items-center">
+                    {/* reCAPTCHA v3 баджик */}
+                    <div 
+                      className="g-recaptcha" 
+                      data-sitekey={config.recaptcha.siteKey} 
+                      data-size="normal"
+                      data-theme="light"
+                      data-badge="inline"
+                    ></div>
+                  </div>
+                  
                   <Button
                     type="submit"
-                    className="bg-ecogold hover:bg-ecogold-light text-ecogreen px-6 py-5 md:px-8 md:py-6 text-base md:text-lg font-medium"
-                    disabled={isSubmitting || !recaptchaToken}
+                    className="bg-ecogold hover:bg-ecogold-light text-ecogreen px-6 py-5 md:px-8 md:py-6 text-base md:text-lg font-medium w-full md:w-auto mt-4"
+                    disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Жіберілуде...' : translations.submitButton}
                   </Button>
