@@ -1,7 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+
+# Разрешаем поисковым системам
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +22,16 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Запрещаем архивацию
+User-agent: ia_archiver
+Disallow: /
+
+# Запрещаем сканеры уязвимостей
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Sogou
+Disallow: /
+
+# Путь к карте сайта
+Sitemap: https://ecolifeeuroasia.com/sitemap.xml

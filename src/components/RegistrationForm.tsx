@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/components/ui/use-toast';
 import { Info, AlertTriangle } from 'lucide-react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { handleFormSubmission } from '@/api/formHandler';
+import config from '@/config';
 
 interface RegistrationFormProps {
   translations: {
@@ -46,6 +49,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
     description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -54,6 +59,10 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
 
   const handleCheckboxChange = (checked: boolean) => {
     setFormData(prev => ({ ...prev, hasCertificate: checked }));
+  };
+
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,28 +92,53 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
       return;
     }
 
-    // Simulation of form submission
-    try {
-      console.log("Form data would be sent to leads@ecolifeeuroasia.com:", formData);
-      
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+    // reCAPTCHA validation
+    if (!recaptchaToken) {
       toast({
-        title: translations.successMessage,
-        description: "Your registration has been submitted successfully!",
+        title: translations.errorMessage,
+        description: "Please complete the reCAPTCHA verification.",
+        variant: "destructive"
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Отправка данных формы с использованием API
+      const result = await handleFormSubmission({
+        ...formData,
+        recaptchaToken
       });
       
-      // Reset form after successful submission
-      setFormData({
-        country: '',
-        company: '',
-        industry: '',
-        email: '',
-        phone: '',
-        hasCertificate: false,
-        description: ''
-      });
+      if (result.success) {
+        toast({
+          title: translations.successMessage,
+          description: result.message,
+        });
+        
+        // Reset form after successful submission
+        setFormData({
+          country: '',
+          company: '',
+          industry: '',
+          email: '',
+          phone: '',
+          hasCertificate: false,
+          description: ''
+        });
+        
+        // Сбросить reCAPTCHA
+        if (recaptchaRef.current) {
+          recaptchaRef.current.reset();
+        }
+        setRecaptchaToken(null);
+      } else {
+        toast({
+          title: translations.errorMessage,
+          description: result.message,
+          variant: "destructive"
+        });
+      }
     } catch (error) {
       toast({
         title: translations.errorMessage,
@@ -265,11 +299,19 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ translations }) => 
                   />
                 </div>
                 
+                <div className="flex justify-center my-4">
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={config.recaptcha.siteKey}
+                    onChange={handleRecaptchaChange}
+                  />
+                </div>
+                
                 <div className="flex justify-center pt-4">
                   <Button
                     type="submit"
                     className="bg-ecogold hover:bg-ecogold-light text-ecogreen px-6 py-5 md:px-8 md:py-6 text-base md:text-lg font-medium"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !recaptchaToken}
                   >
                     {isSubmitting ? 'Жіберілуде...' : translations.submitButton}
                   </Button>

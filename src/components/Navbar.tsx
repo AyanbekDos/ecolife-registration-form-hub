@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Globe } from "lucide-react";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useLanguage } from '@/hooks/useLanguage';
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface NavbarProps {
   onScrollToSection: (section: string) => void;
@@ -85,66 +85,10 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
     </>
   );
 
-  const LanguageDropdown = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
-    
-    // Обработчик клика вне меню
-    React.useEffect(() => {
-      const handleClickOutside = () => {
-        setIsOpen(false);
-      };
-      
-      if (isOpen) {
-        document.addEventListener('click', handleClickOutside);
-      }
-      
-      return () => {
-        document.removeEventListener('click', handleClickOutside);
-      };
-    }, [isOpen]);
-    
-    // Обработчик клика по кнопке
-    const handleButtonClick = (e: React.MouseEvent) => {
-      e.stopPropagation(); // Предотвращаем закрытие меню при клике на кнопку
-      setIsOpen(!isOpen);
-    };
-    
-    // Обработчик выбора языка
-    const handleLangSelect = (lang: string) => (e: React.MouseEvent) => {
-      e.stopPropagation();
-      handleLanguageChange(lang);
-      setIsOpen(false);
-    };
-    
+  // Используем новый компонент LanguageSwitcher вместо LanguageDropdown
+  const LanguageSelector = () => {
     return (
-      <div className="relative">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-white hover:bg-white/10"
-          aria-label="Change language"
-          onClick={handleButtonClick}
-        >
-          <Globe className="h-5 w-5" />
-        </Button>
-        {isOpen && (
-          <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-50">
-            {languages.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={handleLangSelect(lang.code)}
-                className={`w-full text-left px-4 py-2 text-sm ${
-                  currentLanguage === lang.code 
-                    ? 'bg-gray-100 text-gray-900' 
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                {lang.name}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
+      <LanguageSwitcher className="text-white" />
     );
   };
 
@@ -161,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
 
         {isMobile ? (
           <div className="flex items-center space-x-4">
-            <LanguageDropdown />
+            <LanguageSelector />
             <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 md:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="4" y1="12" x2="20" y2="12"></line>
@@ -175,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
             <nav className="hidden md:flex items-center space-x-1">
               <NavItems />
             </nav>
-            <LanguageDropdown />
+            <LanguageSelector />
           </div>
         )}
       </div>

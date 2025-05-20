@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Mail, Globe, MapPin } from 'lucide-react';
+import { Mail, Globe, MapPin, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
   translations: {
@@ -28,6 +29,12 @@ const Footer: React.FC<FooterProps> = ({ translations }) => {
             <p className="text-gray-400 text-xs">
               {translations.copyright}
             </p>
+            <div className="mt-4">
+              <Link to="/admin" className="flex items-center text-gray-400 text-xs hover:text-ecogold transition-colors">
+                <Settings className="h-3 w-3 mr-1" />
+                Администрирование
+              </Link>
+            </div>
           </div>
           
           <div>

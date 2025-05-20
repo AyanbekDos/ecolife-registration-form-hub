@@ -1,0 +1,4 @@
+# Добавьте эти строки в ваш файл .env
+VITE_EMAILJS_SERVICE_ID=ваш_service_id
+VITE_EMAILJS_TEMPLATE_ID=ваш_template_id
+VITE_EMAILJS_PUBLIC_KEY=ваш_public_key

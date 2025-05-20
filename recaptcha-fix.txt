@@ -1,0 +1,9 @@
+GOOGLE_API_KEY=AIzaSyDybjcqZV_YJjsvNZ8Vo-VOyff5z3dajko
+# Настройки почты
+EMAIL_TO=leads@ecolifeeuroasia.com
+# Секретный ключ для reCAPTCHA (добавлен префикс VITE_)
+VITE_RECAPTCHA_SECRET_KEY=6LdS-EArAAAAAHRMrwKhES8k-RamNammORn69Ugd
+VITE_RECAPTCHA_SITE_KEY=6LdS-EArAAAAAO9RSLnoelOab_TEzz1DBo5EWDVN
+# Старые ключи (можно удалить)
+# RECAPTCHA_SECRET_KEY=6LdS-EArAAAAAHRMrwKhES8k-RamNammORn69Ugd
+# RECAPTCHA_SITE_KEY=6LdS-EArAAAAAO9RSLnoelOab_TEzz1DBo5EWDVN

@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AdminPage from "./pages/AdminPage";
+import AdminLogin from "./pages/AdminLogin";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { LanguageRouter } from "./components/LanguageRouter";
 
 const queryClient = new QueryClient();
@@ -19,6 +22,16 @@ const LocalizedRoutes = () => {
         {/* Здесь можно добавить другие страницы с поддержкой языка */}
         {/* Например: <Route path="about" element={<About />} /> */}
       </Route>
+      
+      {/* Маршрут для страницы администратора (защищенный) */}
+      <Route path="admin" element={
+        <ProtectedRoute>
+          <AdminPage />
+        </ProtectedRoute>
+      } />
+      
+      {/* Страница входа для администратора */}
+      <Route path="admin-login" element={<AdminLogin />} />
       
       {/* Перенаправление с корня на язык браузера */}
       <Route 
