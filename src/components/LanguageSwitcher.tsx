@@ -139,7 +139,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) =
             <Button 
               variant="ghost" 
               size="sm" 
-              className="px-3 py-1.5 text-sm font-medium text-white hover:bg-white/10 flex items-center gap-1 w-[70px] justify-center"
+              className="px-3 py-1.5 text-sm font-medium text-[#333333] hover:bg-black/10 flex items-center gap-1 w-[70px] justify-center"
             >
               <Globe className="h-4 w-4" />
               <span>{activeLang.name}</span>

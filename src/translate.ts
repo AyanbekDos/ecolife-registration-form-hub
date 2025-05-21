@@ -2,7 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
 import dotenv from 'dotenv';
-import { Translations } from './translations/types';
+import { fileURLToPath } from 'url';
+
+// Получаем текущую директорию для ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Загрузка переменных окружения из .env файла
 dotenv.config();
@@ -27,6 +31,11 @@ const translationsDir = path.join(__dirname, 'translations');
 // Функция для перевода текста через Google Translate API
 async function translateText(text: string, targetLang: string): Promise<string> {
   try {
+    // Если текст пустой или не строка, возвращаем как есть
+    if (!text || typeof text !== 'string') {
+      return text;
+    }
+    
     const response = await axios.get('https://translation.googleapis.com/language/translate/v2', {
       params: {
         q: text,
@@ -62,7 +71,7 @@ async function translateObject(obj: any, targetLang: string): Promise<any> {
       for (const item of obj[key]) {
         if (typeof item === 'string') {
           result[key].push(await translateText(item, targetLang));
-        } else if (typeof item === 'object') {
+        } else if (typeof item === 'object' && item !== null) {
           result[key].push(await translateObject(item, targetLang));
         } else {
           result[key].push(item);
@@ -83,18 +92,94 @@ async function translateObject(obj: any, targetLang: string): Promise<any> {
   return result;
 }
 
-// Функция для обновления недостающих строк в существующем переводе
-async function updateMissingTranslations(
-  sourceObj: any, 
-  targetObj: any, 
-  targetLang: string, 
-  path: string = ''
-): Promise<any> {
-  const result: any = { ...targetObj };
+// Функция для сравнения объектов и определения изменений
+function findChangedKeys(sourceObj: any, targetObj: any, path: string = ''): string[] {
+  const changedKeys: string[] = [];
   
   for (const key in sourceObj) {
     const currentPath = path ? `${path}.${key}` : key;
     
+    if (!(key in targetObj)) {
+      // Если ключ отсутствует в целевом объекте
+      changedKeys.push(currentPath);
+    } else if (typeof sourceObj[key] === 'object' && sourceObj[key] !== null && 
+               typeof targetObj[key] === 'object' && targetObj[key] !== null && 
+               !Array.isArray(sourceObj[key]) && !Array.isArray(targetObj[key])) {
+      // Рекурсивное сравнение для вложенных объектов
+      changedKeys.push(...findChangedKeys(sourceObj[key], targetObj[key], currentPath));
+    } else if (typeof sourceObj[key] === 'string' && typeof targetObj[key] === 'string') {
+      // Сравнение строк
+      if (sourceObj[key] !== targetObj[key]) {
+        changedKeys.push(currentPath);
+      }
+    } else if (JSON.stringify(sourceObj[key]) !== JSON.stringify(targetObj[key])) {
+      // Сравнение других типов данных
+      changedKeys.push(currentPath);
+    }
+  }
+  
+  return changedKeys;
+}
+
+// Функция для получения значения по пути в объекте
+function getValueByPath(obj: any, path: string): any {
+  const parts = path.split('.');
+  let current = obj;
+  
+  for (const part of parts) {
+    if (current === null || current === undefined || typeof current !== 'object') {
+      return undefined;
+    }
+    current = current[part];
+  }
+  
+  return current;
+}
+
+// Функция для установки значения по пути в объекте
+function setValueByPath(obj: any, path: string, value: any): void {
+  const parts = path.split('.');
+  let current = obj;
+  
+  for (let i = 0; i < parts.length - 1; i++) {
+    const part = parts[i];
+    if (!(part in current)) {
+      current[part] = {};
+    }
+    current = current[part];
+  }
+  
+  current[parts[parts.length - 1]] = value;
+}
+
+// Функция для обновления недостающих и измененных строк в существующем переводе
+async function updateTranslations(
+  sourceObj: any, 
+  targetObj: any, 
+  targetLang: string,
+  baseObj: any = null // Базовый объект для сравнения (предыдущая версия sourceObj)
+): Promise<any> {
+  const result = JSON.parse(JSON.stringify(targetObj)); // Глубокое копирование
+  
+  // Находим измененные ключи, если есть базовый объект для сравнения
+  let changedKeys: string[] = [];
+  if (baseObj) {
+    changedKeys = findChangedKeys(sourceObj, baseObj);
+    console.log(`  🔍 Найдено ${changedKeys.length} измененных ключей`);
+  }
+  
+  // Обновляем измененные ключи
+  for (const path of changedKeys) {
+    const sourceValue = getValueByPath(sourceObj, path);
+    if (typeof sourceValue === 'string') {
+      const translatedValue = await translateText(sourceValue, targetLang);
+      setValueByPath(result, path, translatedValue);
+      console.log(`  🔄 Обновлен ключ: ${path}`);
+    }
+  }
+  
+  // Обновляем недостающие ключи и структуры
+  for (const key in sourceObj) {
     if (!(key in result)) {
       // Если ключ отсутствует в целевом объекте
       if (Array.isArray(sourceObj[key])) {
@@ -103,7 +188,7 @@ async function updateMissingTranslations(
         for (const item of sourceObj[key]) {
           if (typeof item === 'string') {
             result[key].push(await translateText(item, targetLang));
-          } else if (typeof item === 'object') {
+          } else if (typeof item === 'object' && item !== null) {
             result[key].push(await translateObject(item, targetLang));
           } else {
             result[key].push(item);
@@ -119,14 +204,26 @@ async function updateMissingTranslations(
         // Для других типов данных
         result[key] = sourceObj[key];
       }
-      console.log(`  ✅ Добавлен новый ключ: ${currentPath}`);
-    } else if (typeof sourceObj[key] === 'object' && sourceObj[key] !== null && !Array.isArray(sourceObj[key])) {
+      console.log(`  ✅ Добавлен новый ключ: ${key}`);
+    } else if (typeof sourceObj[key] === 'object' && sourceObj[key] !== null && 
+               typeof result[key] === 'object' && result[key] !== null && 
+               !Array.isArray(sourceObj[key]) && !Array.isArray(result[key])) {
       // Рекурсивное обновление для вложенных объектов
-      result[key] = await updateMissingTranslations(sourceObj[key], result[key], targetLang, currentPath);
+      const baseObjKey = baseObj && typeof baseObj === 'object' ? baseObj[key] : null;
+      result[key] = await updateTranslations(sourceObj[key], result[key], targetLang, baseObjKey);
     }
   }
   
   return result;
+}
+
+// Функция для сохранения предыдущей версии файла
+function backupFile(filePath: string): void {
+  if (fs.existsSync(filePath)) {
+    const backupPath = `${filePath}.bak`;
+    fs.copyFileSync(filePath, backupPath);
+    console.log(`  📦 Создана резервная копия: ${backupPath}`);
+  }
 }
 
 // Основная функция для запуска процесса перевода
@@ -147,11 +244,30 @@ async function main() {
       process.exit(1);
     }
     
-    const sourceData = JSON.parse(fs.readFileSync(sourceFilePath, 'utf8')) as Translations;
+    // Загружаем текущую версию исходного файла
+    const sourceData = JSON.parse(fs.readFileSync(sourceFilePath, 'utf8'));
     console.log('📄 Загружен исходный файл kk.json');
+    
+    // Загружаем предыдущую версию исходного файла, если она существует
+    const backupPath = `${sourceFilePath}.bak`;
+    let previousSourceData = null;
+    if (fs.existsSync(backupPath)) {
+      try {
+        previousSourceData = JSON.parse(fs.readFileSync(backupPath, 'utf8'));
+        console.log('📄 Загружена предыдущая версия kk.json');
+      } catch (error) {
+        console.warn(`⚠️ Не удалось загрузить предыдущую версию: ${error}`);
+      }
+    }
+    
+    // Создаем резервную копию текущего исходного файла
+    backupFile(sourceFilePath);
     
     // Перевод на все целевые языки
     for (const lang of targetLangs) {
+      // Пропускаем казахский язык, так как это исходный язык
+      if (lang === 'kk') continue;
+      
       const targetFilePath = path.join(translationsDir, `${lang}.json`);
       
       console.log(`\n🔄 Обработка языка: ${lang}`);
@@ -161,11 +277,15 @@ async function main() {
       // Проверка существования файла перевода
       if (fs.existsSync(targetFilePath)) {
         console.log(`  📄 Найден существующий файл ${lang}.json`);
+        
+        // Создаем резервную копию текущего файла перевода
+        backupFile(targetFilePath);
+        
         const existingData = JSON.parse(fs.readFileSync(targetFilePath, 'utf8'));
         
-        // Обновление только недостающих строк
-        console.log(`  🔄 Обновление недостающих строк...`);
-        translatedData = await updateMissingTranslations(sourceData, existingData, lang);
+        // Обновление недостающих и измененных строк
+        console.log(`  🔄 Обновление переводов...`);
+        translatedData = await updateTranslations(sourceData, existingData, lang, previousSourceData);
         console.log(`  ✅ Обновление завершено`);
       } else {
         console.log(`  🆕 Создание нового файла ${lang}.json`);
@@ -189,4 +309,7 @@ async function main() {
 }
 
 // Запуск основной функции
-main();
+main().catch(error => {
+  console.error(`❌ Необработанная ошибка: ${error}`);
+  process.exit(1);
+});

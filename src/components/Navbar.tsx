@@ -76,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
         <Button 
           key={item.section}
           variant="ghost" 
-          className="text-white hover:bg-white/10"
+          className="text-[#333333] hover:bg-black/10"
           onClick={() => onScrollToSection(item.section)}
         >
           {item.name}
@@ -88,12 +88,12 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
   // Используем новый компонент LanguageSwitcher вместо LanguageDropdown
   const LanguageSelector = () => {
     return (
-      <LanguageSwitcher className="text-white" />
+      <LanguageSwitcher className="text-[#333333]" />
     );
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#021F18] shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F5F5] shadow-md">
       <div className="container mx-auto flex justify-between items-center py-3 px-4">
         <div className="flex items-center">
           <img 
@@ -106,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollToSection }) => {
         {isMobile ? (
           <div className="flex items-center space-x-4">
             <LanguageSelector />
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 md:hidden">
+            <Button variant="ghost" size="icon" className="text-[#333333] hover:bg-black/10 md:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="4" y1="12" x2="20" y2="12"></line>
                 <line x1="4" y1="6" x2="20" y2="6"></line>

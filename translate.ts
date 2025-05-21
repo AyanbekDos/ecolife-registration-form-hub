@@ -317,10 +317,11 @@ async function main() {
     
     // Перевод на все целевые языки
     for (const lang of targetLangs) {
-      if (changedPaths.length === 0 && lang !== 'en') {
-        // Пропускаем языки, если нет изменений (кроме английского, который всегда обновляем)
-        continue;
-      }
+      // Всегда обрабатываем все языки, независимо от наличия изменений
+      // if (changedPaths.length === 0 && lang !== 'en') {
+      //   // Пропускаем языки, если нет изменений (кроме английского, который всегда обновляем)
+      //   continue;
+      // }
       
       const targetFilePath = path.join(translationsDir, `${lang}.json`);
       

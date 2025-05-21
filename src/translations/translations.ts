@@ -11,6 +11,10 @@ export interface Translations {
     subtitle: string;
     description: string;
     registerButton: string;
+    platformStatus?: string;
+    additionalInfo?: string;
+    officialInfo?: string;
+    callToAction?: string;
   };
   about: {
     title: string;
@@ -85,7 +89,8 @@ export const translations: Record<string, Translations> = {
       title: 'EKOLIFEEUROASIA',
       subtitle: 'Сіздің бизнесіңіз үшін жаңа мүмкіндіктер кеңістігі. Жақсы орындарға тіркеліңіз – болашақ бүгіннен басталады',
       description: 'Европа мен Орталық Азияны біріктіретін, баламасы жоқ цифрлық кеңістік. Экологиялық таза өнімдер, қызметтер, мен эко технологияларға арналған инновациялық және сенімді халықаралық эко-платформа.',
-      registerButton: 'Тіркелу'
+      registerButton: 'Тіркелу',
+      platformStatus: 'Платформа жасалып жатыр'
     },
     about: {
       title: 'EKOLIFEEUROASIA ТУРАЛЫ',
@@ -177,9 +182,10 @@ export const translations: Record<string, Translations> = {
     },
     hero: {
       title: 'EKOLIFEEUROASIA',
-      subtitle: 'Пространство новых возможностей для вашего бизнеса. Зарегистрируйтесь на лучших местах – будущее начинается сегодня',
+      subtitle: 'Пространство новых возможностей для вашего бизнеса. Зарегистрируйтесь на лучшие места – будущее начинается сегодня',
       description: 'Уникальное цифровое пространство, объединяющее Европу и Центральную Азию. Инновационная и надежная международная эко-платформа для экологически чистых продуктов, услуг и эко-технологий.',
-      registerButton: 'Регистрация'
+      registerButton: 'Регистрация',
+      platformStatus: 'Платформа в разработке'
     },
     about: {
       title: 'О EKOLIFEEUROASIA',
@@ -273,7 +279,8 @@ export const translations: Record<string, Translations> = {
       title: 'ECOLIFEEUROASIA',
       subtitle: 'A space of new opportunities for your business. Register for the best spots – the future begins today',
       description: 'A unique digital space connecting Europe and Central Asia. An innovative and reliable international eco-platform for environmentally-friendly products, services, and eco-technologies.',
-      registerButton: 'Register'
+      registerButton: 'Register',
+      platformStatus: 'Platform under development'
     },
     about: {
       title: 'ABOUT ECOLIFEEUROASIA',

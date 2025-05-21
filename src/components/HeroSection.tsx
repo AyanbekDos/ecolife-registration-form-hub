@@ -38,18 +38,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToRegistration, trans
             <h2 className="text-xl md:text-2xl text-ecogold mb-6">
               {translations.subtitle}
             </h2>
-            <p className="text-white/90 mb-4 max-w-2xl text-responsive">
-              {translations.additionalInfo || ""}
-            </p>
+            
             <p className="text-white/90 mb-6 max-w-2xl text-responsive">
-              {translations.officialInfo || ""}
+              {translations.description}
             </p>
-            <p className="text-white/80 mb-4 italic">
-              {translations.platformStatus || ""}
-            </p>
-            <p className="text-white/90 mb-8 max-w-xl text-responsive">
-              {translations.callToAction || ""}
-            </p>
+            
+            {/* Информационный блок с текстом о разработке платформы */}
+            <div className="flex justify-center mb-6">
+              <div className="inline-block bg-white/10 px-6 py-3 rounded-lg border border-ecogold/50">
+                <p className="text-ecogold text-xl font-bold">
+                  {translations.platformStatus || ""}
+                </p>
+              </div>
+            </div>
             <Button 
               onClick={onScrollToRegistration}
               className="bg-ecogold hover:bg-ecogold-light text-ecogreen-dark font-semibold px-6 py-5 sm:px-8 sm:py-6 text-base sm:text-lg"

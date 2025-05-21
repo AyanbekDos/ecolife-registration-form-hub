@@ -1,124 +1,124 @@
 {
   "navbar": {
-    "home": "Sākumslapa",
-    "about": "Par mums",
-    "benefits": "Priekšrocības",
-    "register": "Reģistrācija"
+    "home": "Басты бет",
+    "about": "Біз туралы",
+    "benefits": "Артықшылықтар",
+    "register": "Тіркелу"
   },
   "hero": {
-    "title": "EKOLOĢIJAEIROĀZIJA",
-    "subtitle": "Jauna iespēju telpa jūsu biznesam. Reģistrējieties labām vietām – nākotne sākas jau šodien",
-    "description": "Unikāla digitālā telpa, kas vieno Eiropu un Centrālāziju. Inovatīva un uzticama starptautiska ekoplatforma videi draudzīgiem produktiem, pakalpojumiem un ekotehnoloģijām.",
-    "registerButton": "Reģistrācija",
-    "additionalInfo": "Pārbaudīti ekopakalpojumi, ekoprodukti un inovatīvas ekotehnoloģijas Eiropā un Centrālāzijā vienuviet",
-    "officialInfo": "Oficiāls projekts, kas likumīgi reģistrēts valsts līmenī",
-    "platformStatus": "&quot;Platforma tiek būvēta&quot;",
-    "callToAction": "EkoLifeEuroAsia – Jaunu iespēju telpa jūsu biznesam. Reģistrējieties labām vietām — nākotne sākas jau šodien"
+    "title": "EKOLIFEEUROASIA",
+    "subtitle": "Сіздің бизнесіңіз үшін жаңа мүмкіндіктер кеңістігі. Жақсы орындарға тіркеліңіз – болашақ бүгіннен басталады",
+    "description": "Европа мен Орталық Азияны біріктіретін, баламасы жоқ цифрлық кеңістік. Экологиялық таза өнімдер, қызметтер, мен эко технологияларға арналған инновациялық және сенімді халықаралық эко-платформа.",
+    "registerButton": "Тіркелу",
+    "additionalInfo": "Еуропа мен Орталық Азиядағы тексерілген эко қызметтер, эко өнімдер, иновациялық эко технологиялар бір жерде",
+    "officialInfo": "Ресми жоба, Мемлекеттік деңгейде заңды тіркелген",
+    "platformStatus": "«Платформа жасалып жатыр»",
+    "callToAction": "EkoLifeEuroAsia – Сіздің бизнесіңіз үшін жаңа мүмкіндіктер кеңістігі. Жақсы орындарға тіркеліңіз — болашақ бүгіннен басталады"
   },
   "about": {
-    "title": "PAR EKOLIFEEUROASIAT",
-    "mission": "Veicināt vides apziņu un radīt tīru, ilgtspējīgu un videi draudzīgu uzņēmējdarbības vidi Eiropā un Centrālāzijā.",
-    "missionTitle": "Mūsu misija",
-    "description": "Pārbaudīti ekopakalpojumi, ekoprodukti, inovatīvas ekotehnoloģijas Eiropā un Centrālāzijā vienuviet. Oficiāls projekts, kas juridiski reģistrēts valsts līmenī.",
+    "title": "EKOLIFEEUROASIA ТУРАЛЫ",
+    "mission": "Экологиялық сананы арттырып, Еуропа мен Орталық Азияда табиғатпен үйлесімді, таза және тұрақты бизнес-орта қалыптастыру.",
+    "missionTitle": "Миссиямыз",
+    "description": "Европа мен Орталық Азиядағы тексерілген эко қызметтер, эко өнімдер, иновациялық эко технологиялар бір жерде Ресми жоба, Мемлекеттік деңгейде заңды тіркелген",
     "features": {
       "international": {
-        "title": "Starptautiskā platforma",
-        "description": "Apvieno Eiropu un Centrālāziju"
+        "title": "Халықаралық платформа",
+        "description": "Еуропа мен Орталық Азияны біріктіреді"
       },
       "certified": {
-        "title": "Sertificēts",
-        "description": "Pārbaudīti ekoprodukti un pakalpojumi"
+        "title": "Сертификатталған",
+        "description": "Тексерілген эко-өнімдер мен қызметтер"
       },
       "official": {
-        "title": "Oficiāli reģistrēts",
-        "description": "Juridiski reģistrēts valsts līmenī"
+        "title": "Рәсми тіркелген",
+        "description": "Мемлекеттік деңгейде заңды тіркелген"
       }
     }
   },
   "benefits": {
-    "title": "PRIEKŠROCĪBAS",
+    "title": "АРТЫҚШЫЛЫҚТАР",
     "benefits": [
       {
-        "title": "Vairāk nekā 40 valstu tirgi",
-        "description": "Nāciet tūlīt iekšā! Reģistrējies tūlīt un iekaro pasaules tirgu!"
+        "title": "40+ Ел нарығына",
+        "description": "бірден кіріңіз! Қазір тіркеліп, әлем нарығын бағындырыңыз!"
       },
       {
-        "title": "50% atlaide",
-        "description": "Laiks ir ierobežots! Izmantojiet iepriekšējas reģistrācijas priekšrocības!"
+        "title": "50% жеңілдік",
+        "description": "уақыт шектеулі! Алдын ала тіркелудің артықшылығын пайдаланыңыз!"
       },
       {
-        "title": "&quot;100 globālie eko līderi&quot;",
-        "description": "Iegūstiet statusu! Vietu skaits ir ierobežots!"
+        "title": "\"100 әлемдік эко лидер\"",
+        "description": "мәртебесін алыңыз! Шектеулі орындар бар!"
       },
       {
-        "title": "&quot;100 ekoloģiski zīmoli&quot;",
-        "description": "Stāviet rindā! Esi starp labākajiem, vietu skaits ierobežots!"
+        "title": "\"100 эко бренд\"",
+        "description": "қатарында болыңыз! Үздіктердің қатарында болыңыз, шектеулі орындар бар!"
       },
       {
-        "title": "Visefektīvākās vietas",
-        "description": "Tas varētu būt tavējais #1 ekoplatformā! Ierobežota laika piedāvājums, reģistrējieties tūlīt!"
+        "title": "Ең тиімді орындар",
+        "description": "#1 эко-платформада сіздікі болуы мүмкін! Шектеулі мүмкіндік, қазір тіркеліңіз!"
       }
     ],
-    "whyRegisterTitle": "KĀPĒC REĢISTRĒTIES TAGAD?",
+    "whyRegisterTitle": "НЕГЕ ҚАЗІР ТІРКЕЛУ КЕРЕК?",
     "benefitsItems": [
       {
-        "title": "Iekļūsti vairāk nekā 40 valstu tirgos acumirklī!",
-        "description": "Reģistrējies tūlīt un iekaro pasaules tirgu!"
+        "title": "40+ ел нарығына бірден кіріңіз!",
+        "description": "Қазір тіркеліп, әлем нарығын бағындырыңыз!"
       },
       {
-        "title": "50% atlaide – tikai ierobežotu laiku!",
-        "description": "Izmantojiet iepriekšējas reģistrācijas priekšrocības!"
+        "title": "50% жеңілдік – уақыт шектеулі!",
+        "description": "Алдын ала тіркелудің артықшылығын пайдаланыңыз!"
       },
       {
-        "title": "100 globālie eko līderi",
-        "description": "Iegūstiet titulu! Vietu skaits ir ierobežots!"
+        "title": "100 Әлемдік Эко Лидер",
+        "description": "Атағын иеленуге үлгеріңіз! Орын саны шектеулі!"
       },
       {
-        "title": "Esi starp 100 ekozīmoliem!",
-        "description": "Esi viens no labākajiem, vietu skaits ir ierobežots!"
+        "title": "100 ЭкоБренд қатарында болыңыз!",
+        "description": "Үздіктердің бірі болыңыз, орын шектеулі!"
       },
       {
-        "title": "Visienesīgākās vietas ekoplatformā Nr. 1",
-        "description": "Tas varētu būt tavs! Ierobežota vieta, reģistrējieties tūlīt!"
+        "title": "№1 экоплатформадағы ең тиімді орындар",
+        "description": "Сіздікі болуы мүмкін! Мүмкіндік шектеулі, қазір тіркеліңіз!"
       }
     ]
   },
   "registration": {
-    "title": "Iepriekšējas reģistrācijas veidlapa",
-    "subtitle": "Cienījamais partneri! Lai iepriekš reģistrētos EkoLifeEuroAsia ekoplatformā, lūdzu, aizpildiet tālāk norādīto informāciju.",
+    "title": "Алдын ала тіркелу формасы",
+    "subtitle": "Құрметті серіктес! EkoLifeEuroAsia эко-платформасына алдын ала тіркелу үшін төмендегі ақпаратты толтырыңыз.",
     "fields": {
-      "country": "Valsts/pilsēta",
-      "company": "Uzņēmuma nosaukums",
-      "industry": "Nozare / Virziens",
-      "email": "E-pasta adrese",
-      "phone": "Tālrunis (pēc izvēles)",
-      "hasCertificate": "Vai jums ir vides sertifikāts?",
-      "yes": "Jā",
-      "no": "Nē",
-      "description": "Īss jūsu uzņēmuma apraksts (par jūsu produktiem vai pakalpojumiem)"
+      "country": "Ел / Қала",
+      "company": "Компания атауы",
+      "industry": "Сала / Бағыт",
+      "email": "Электрондық пошта",
+      "phone": "Телефон (міндетті емес)",
+      "hasCertificate": "Сізде экологиялық сертификат бар ма?",
+      "yes": "Иә",
+      "no": "Жоқ",
+      "description": "Компанияңыз туралы қысқаша сипаттама (өнімдеріңіз немесе қызметтеріңіз туралы)"
     },
     "warning": {
-      "title": "PIEVĒRSIET UZMANĪBU!",
-      "description": "Reģistrācija platformā sastāv no diviem posmiem:",
+      "title": "НАЗАР АУДАРЫҢЫЗ!",
+      "description": "Платформаға тіркелу екі кезеңнен тұрады:",
       "steps": [
-        "Lai veiktu apmaksu, rezervētu vietu un saņemtu atlaides, nepieciešama iepriekšēja reģistrācija.",
-        "Iepriekšēja reģistrācija — sākas pēc platformas demonstrācijas versijas palaišanas."
+        "Алдын ала тіркелу – төлем жасау, орын брондау және жеңілдіктерді қамтамасыз ету үшін.",
+        "Кеңейтілген тіркелу – платформаның демо нұсқасы іске қосылғаннан кейін басталады."
       ]
     },
-    "formTitle": "1. Informācija par reģistrētāju",
-    "afterSubmit": "Pēc iepriekšējas reģistrācijas drīzumā nosūtīsim jums vietnes prezentāciju pa e-pastu.",
-    "submitButton": "Sūtīt",
-    "successMessage": "Veiksmīgi nosūtīts!",
-    "errorMessage": "Kļūda"
+    "formTitle": "1. Тіркеуші туралы ақпарат",
+    "afterSubmit": "Алдын ала тіркелгеннен кейін, біз сізге жақын арада электрондық пошта арқылы сайт презентациясын жібереміз.",
+    "submitButton": "Жіберу",
+    "successMessage": "Сәтті жіберілді!",
+    "errorMessage": "Қате"
   },
   "footer": {
-    "contact": "Kontaktinformācija",
+    "contact": "Байланыс",
     "email": "leads@ecolifeeuroasia.com",
-    "location": "Atrašanās vieta: Centrālāzija | Kazahstāna | Karagandas pilsēta",
-    "copyright": "© 2025 EkoLifeEuroAsia. Visas tiesības aizsargātas.",
-    "companyDescription": "EcoLifeEuroAsia ir reģistrēta starptautiska ekoplatforma",
-    "platformDevelopment": "(Jauna platformas versija ir izstrādes procesā — sekojiet līdzi jaunumiem!)",
-    "securityTitle": "Drošība",
-    "securityDescription": "Jūsu dati ir aizsargāti. Visi darījumi ir droši."
+    "location": "Орналасқан жері: Орталық Азия | Қазақстан | Қарағанды қаласы",
+    "copyright": "© 2025 EkoLifeEuroAsia. Барлық құқықтар қорғалған",
+    "companyDescription": "EcoLifeEuroAsia — тіркелген халықаралық экоплатформа",
+    "platformDevelopment": "(Жаңа платформа нұсқасы жасалып жатыр — бізбен бірге болыңыз!)",
+    "securityTitle": "Қауіпсіздік",
+    "securityDescription": "Сіздің деректеріңіз қорғалған. Барлық транзакциялар қауіпсіз."
   }
 }
