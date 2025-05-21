@@ -2,8 +2,14 @@
 const fs = require('fs');
 const path = require('path');
 
+// Парсим аргументы командной строки
+const args = process.argv.slice(2);
+const customDir = args.find(arg => arg.startsWith('--dir='))?.split('=')[1];
+
 // Путь к директории с переводами
-const translationsDir = path.join(__dirname, 'src', 'translations');
+const translationsDir = customDir 
+  ? path.resolve(customDir) 
+  : path.join(process.cwd(), 'src', 'translations');
 
 // Получаем список всех JSON-файлов в директории
 const files = fs.readdirSync(translationsDir)

@@ -139,7 +139,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) =
             <Button 
               variant="ghost" 
               size="sm" 
-              className="px-3 py-1.5 text-sm font-medium text-[#333333] hover:bg-black/10 flex items-center gap-1 w-[70px] justify-center"
+              className="px-3 py-1.5 text-sm font-medium text-gray-800 hover:bg-black/10 flex items-center gap-1 justify-center"
             >
               <Globe className="h-4 w-4" />
               <span>{activeLang.name}</span>
@@ -151,7 +151,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) =
               <DropdownMenuItem
                 key={lang.code}
                 onClick={() => changeLanguage(lang.code)}
-                className={`${lang.code === currentLanguage ? 'bg-gray-100 font-bold' : ''} hover:bg-gray-100`}
+                className={`${lang.code === currentLanguage ? 'bg-black/10 font-bold' : ''} hover:bg-black/10`}
                 disabled={lang.code === currentLanguage}
               >
                 {lang.name}
